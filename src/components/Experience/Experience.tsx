@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Typography, Paper, Box } from '@mui/material';
-import { TimelineItem, TimelineSeparator, TimelineDot, TimelineConnector, TimelineContent, Timeline } from '@mui/lab';
+import { Container, Typography, Box } from '@mui/material';
+import { TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, Timeline } from '@mui/lab';
 import logo_99x from '../../assets/logos/99x.png';
 
 const experiences = [
