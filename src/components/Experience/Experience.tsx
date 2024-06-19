@@ -37,7 +37,7 @@ const experiences = [
 const Experience: React.FC = () => {
 
     return (
-        <Container sx={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        <Container>
             <Typography variant="h2" gutterBottom>
                 Experience
             </Typography>
@@ -81,7 +81,7 @@ const Experience: React.FC = () => {
                                 {index < experiences.length - 1 && <TimelineConnector />}
                             </TimelineSeparator>
                             <TimelineContent sx={{ display: 'flex', justifyContent: index % 2 === 0 ? 'flex-start' : 'flex-end' }}>
-                                <Paper elevation={3} sx={{ p: 2, maxWidth: '300px' }}>
+                                <div style={{ padding: 2, maxWidth: '300px' }}>
                                     <Typography variant="h6" component="h1">
                                         {experience.title}
                                     </Typography>
@@ -92,7 +92,7 @@ const Experience: React.FC = () => {
                                         {experience.date}
                                     </Typography>
                                     <Typography variant="body1">{experience.description}</Typography>
-                                </Paper>
+                                </div>
                             </TimelineContent>
                         </TimelineItem>
                     ))}
