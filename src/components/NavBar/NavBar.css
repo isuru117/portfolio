@@ -1,14 +1,12 @@
 .navbar {
-    z-index: 1300;
-    position: fixed;
     top: 0;
-    width: 100%;
-    /* Ensure this is higher than the Drawer */
+    z-index: 1000;
+    /* Ensure it's above other content */
 }
 
 .drawer {
-    z-index: 1200;
-    /* This should be lower than the NavBar */
+    z-index: 999;
+    /* Ensure drawer is below navbar */
 }
 
 .desktop-menu .MuiButtonBase-root {

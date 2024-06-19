@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItemText, Divider, Hidden, ListItemButton, Button } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItemText, Divider, Hidden, Button, ListItemButton } from '@mui/material';
+import { Link as ScrollLink } from 'react-scroll';
 import MenuIcon from '@mui/icons-material/Menu';
 import './NavBar.css';
 
@@ -17,8 +17,12 @@ const NavBar: React.FC = () => {
         setDrawerOpen(open);
     };
 
+    const ScrollLinkWrapper = (props: any) => {
+        return <ScrollLink {...props} />;
+    };
+
     return (
-        <AppBar position="static" className="navbar">
+        <AppBar position="sticky" className="navbar">
             <Toolbar>
                 <Typography variant="h6" sx={{ flexGrow: 1 }}>
                     My Bio
@@ -36,16 +40,16 @@ const NavBar: React.FC = () => {
                 </Hidden>
                 {/* Regular Navigation Links for Desktop */}
                 <Hidden smDown>
-                    <Button color="inherit" component={RouterLink} to="/">
+                    <Button color="inherit" component={ScrollLinkWrapper} to="introduction" smooth duration={500}>
                         Introduction
                     </Button>
-                    <Button color="inherit" component={RouterLink} to="/experience">
+                    <Button color="inherit" component={ScrollLinkWrapper} to="experience" smooth duration={500}>
                         Experience
                     </Button>
-                    <Button color="inherit" component={RouterLink} to="/socials">
+                    <Button color="inherit" component={ScrollLinkWrapper} to="socials" smooth duration={500}>
                         Socials
                     </Button>
-                    <Button color="inherit" component={RouterLink} to="/contact">
+                    <Button color="inherit" component={ScrollLinkWrapper} to="contact" smooth duration={500}>
                         Contact
                     </Button>
                 </Hidden>
@@ -60,16 +64,16 @@ const NavBar: React.FC = () => {
             >
                 <div>
                     <List>
-                        <ListItemButton component={RouterLink} to="/" onClick={toggleDrawer(false)}>
+                        <ListItemButton component={ScrollLinkWrapper} to="introduction" smooth duration={500} onClick={toggleDrawer(false)}>
                             <ListItemText primary="Introduction" />
                         </ListItemButton>
-                        <ListItemButton component={RouterLink} to="/experience" onClick={toggleDrawer(false)}>
+                        <ListItemButton component={ScrollLinkWrapper} to="experience" smooth duration={500} onClick={toggleDrawer(false)}>
                             <ListItemText primary="Experience" />
                         </ListItemButton>
-                        <ListItemButton component={RouterLink} to="/socials" onClick={toggleDrawer(false)}>
+                        <ListItemButton component={ScrollLinkWrapper} to="socials" smooth duration={500} onClick={toggleDrawer(false)}>
                             <ListItemText primary="Socials" />
                         </ListItemButton>
-                        <ListItemButton component={RouterLink} to="/contact" onClick={toggleDrawer(false)}>
+                        <ListItemButton component={ScrollLinkWrapper} to="contact" smooth duration={500} onClick={toggleDrawer(false)}>
                             <ListItemText primary="Contact" />
                         </ListItemButton>
                     </List>
