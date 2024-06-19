@@ -47,8 +47,13 @@ const experiences = [
         date: '2016 - 2018',
         title: 'Intern',
         company: 'Big Corp',
-        description: 'Assisted in developing internal tools.',
-        technologies: 'Flutter, HERE Maps, AWS, Python, IPEmotion RT',
+        description: `
+        • Architected and implemented robust backend REST API services utilizing Express.js and MongoDB.
+        • Engineered and refined dynamic frontend components with Angular, delivering a user-centric interface.
+        • Automated cloud infrastructure deployment using AWS CDK, optimizing resource allocation and efficiency.
+        • Orchestrated the deployment and management of Docker containers on AWS EC2 instances, bolstering application scalability and reliability.
+        • Enhanced an in-house JSON data query language written in C++, significantly improving the performance`,
+        technologies: 'AWS EC2, AWS S3, AWS CDK, ExpressJS, TypeScript, C++, Angular, MongoDB, Jenkins, Docker',
         icon: logo_99x
     },
 ];
