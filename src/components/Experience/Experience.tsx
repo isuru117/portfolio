@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container, Typography, Box } from '@mui/material';
 import { TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, Timeline } from '@mui/lab';
+import { useInView } from 'react-intersection-observer';
 import logo_99x from '../../assets/logos/99x.png';
 import logo_pmtc from '../../assets/logos/pmtc.png';
 import logo_tracified from '../../assets/logos/tracified.jpeg';
+import './Experience.css';
 
 const experiences = [
     {
@@ -69,6 +71,63 @@ const ExperienceDescription = ({ description }: { description: string }) => {
     return <>{paragraphs}</>;
 };
 
+const ExperienceItem = ({ experience }: { experience: any }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
+    return (
+        <TimelineItem
+            ref={ref}
+            className={`timeline-item ${inView ? 'fade-in' : ''}`}
+            sx={{
+                scrollSnapAlign: 'start',
+            }}
+        >
+            <TimelineSeparator>
+                <Box
+                    component="span"
+                    sx={{
+                        width: 56,
+                        height: 56,
+                        borderRadius: '50%',
+                        bgcolor: experience.icon.color,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: 1,
+                    }}
+                >
+                    <img
+                        src={experience.icon.image}
+                        alt={`${experience.company} logo`}
+                        style={{ width: 40, height: 40, borderRadius: '50%' }}
+                    />
+                </Box>
+                <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+                <div style={{ padding: 2, maxWidth: '600px' }}>
+                    <Typography variant="h6" component="h1">
+                        {experience.title}
+                    </Typography>
+                    <Typography variant="subtitle1">
+                        {experience.company}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                        {experience.date}
+                    </Typography>
+                    <ExperienceDescription description={experience.description} />
+                    <Typography variant="body2" color="textSecondary">
+                        Technologies: {experience.technologies}
+                    </Typography>
+                </div>
+            </TimelineContent>
+        </TimelineItem>
+    );
+};
+
 const Experience: React.FC = () => {
 
     return (
@@ -87,52 +146,7 @@ const Experience: React.FC = () => {
             }}>
                 <Timeline position="alternate">
                     {experiences.map((experience, index) => (
-                        <TimelineItem
-                            key={index}
-                            sx={{
-                                scrollSnapAlign: 'start',
-                            }}
-                        >
-                            <TimelineSeparator>
-                                <Box
-                                    component="span"
-                                    sx={{
-                                        width: 56,
-                                        height: 56,
-                                        borderRadius: '50%',
-                                        bgcolor: experience.icon.color,
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        boxShadow: 1,
-                                    }}
-                                >
-                                    <img
-                                        src={experience.icon.image}
-                                        alt={`${experience.company} logo`}
-                                        style={{ width: 40, height: 40, borderRadius: '50%' }}
-                                    />
-                                </Box>
-                                {index < experiences.length - 1 && <TimelineConnector />}
-                            </TimelineSeparator>
-                            <TimelineContent sx={{ display: 'flex', justifyContent: index % 2 === 0 ? 'flex-start' : 'flex-end' }}>
-                                <div style={{ padding: 2, maxWidth: '600px' }}>
-                                    <Typography variant="h6" component="h1">
-                                        {experience.title}
-                                    </Typography>
-                                    <Typography variant="subtitle1">
-                                        {experience.company}
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary">
-                                        {experience.date}
-                                    </Typography>
-                                    <ExperienceDescription description={experience.description} />
-                                    <Typography variant="body2" color="textSecondary">
-                                        Technologies: {experience.technologies}
-                                    </Typography>
-                                </div>
-                            </TimelineContent>
-                        </TimelineItem>
+                        <ExperienceItem key={index} experience={experience} />
                     ))}
                 </Timeline>
             </Box>
