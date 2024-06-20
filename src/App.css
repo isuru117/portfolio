@@ -27,6 +27,7 @@
 .app-container {
   margin-top: 80px;
   padding: 20px;
+  height: 100vh;
 }
 
 .route-container {
@@ -65,8 +66,18 @@ body {
 }
 
 .section {
-  height: 100vh;
+  min-height: 100vh;
   scroll-snap-align: start;
-  overflow-y: scroll;
   scroll-behavior: smooth;
+}
+
+.app-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.app-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
