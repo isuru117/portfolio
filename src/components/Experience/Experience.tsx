@@ -3,6 +3,7 @@ import { Container, Typography, Box } from '@mui/material';
 import { TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, Timeline } from '@mui/lab';
 import logo_99x from '../../assets/logos/99x.png';
 import logo_pmtc from '../../assets/logos/pmtc.png';
+import logo_tracified from '../../assets/logos/tracified.jpeg';
 
 const experiences = [
     {
@@ -14,7 +15,7 @@ const experiences = [
         • Ensure high standards of project execution through rigorous management and review processes, enhancing the project’s technological advancement and market readiness.
         • Brought forward and executed the company’s real-time data logger project, significantly enhancing the efficiency of vehicle diagnostics and monitoring capabilities through improved data collection and analysis.`,
         technologies: 'Flutter, HERE Maps, AWS, Python, IPEmotion RT',
-        icon: logo_pmtc
+        icon: { image: logo_pmtc, color: 'white' }
     },
     {
         date: 'Jun. 2022 - Aug. 2022',
@@ -25,7 +26,7 @@ const experiences = [
         • Streamlined infrastructure deployment on Azure utilizing ARM templates.
         • Achieved in developing a compatibility layer between Mapbox GL with React Beautiful DND libraries, meeting client specifications for enhanced drag-and-drop functionalities.`,
         technologies: 'Azure Functions, Azure DevOps, Azure Resource Manager, .NET Core, TypeScript, React, SQL Server',
-        icon: logo_99x
+        icon: { image: logo_99x, color: 'white' }
     },
     {
         date: 'Mar. 2020 - Jun. 2022',
@@ -41,12 +42,12 @@ const experiences = [
         user-drawn polygons along with custom metadata.
         `,
         technologies: 'Azure Functions, Azure AD, Azure DevOps, .NET Core, TypeScript, React, SQL Server',
-        icon: logo_99x
+        icon: { image: logo_99x, color: 'white' }
     },
     {
-        date: '2016 - 2018',
-        title: 'Intern',
-        company: 'Big Corp',
+        date: 'Aug. 2019 - Feb. 2020',
+        title: 'Trainee Software Engineer',
+        company: 'Tracified',
         description: `
         • Architected and implemented robust backend REST API services utilizing Express.js and MongoDB.
         • Engineered and refined dynamic frontend components with Angular, delivering a user-centric interface.
@@ -54,15 +55,15 @@ const experiences = [
         • Orchestrated the deployment and management of Docker containers on AWS EC2 instances, bolstering application scalability and reliability.
         • Enhanced an in-house JSON data query language written in C++, significantly improving the performance`,
         technologies: 'AWS EC2, AWS S3, AWS CDK, ExpressJS, TypeScript, C++, Angular, MongoDB, Jenkins, Docker',
-        icon: logo_99x
+        icon: { image: logo_tracified, color: 'black' }
     },
 ];
 
 const ExperienceDescription = ({ description }: { description: string }) => {
     const paragraphs = description.split('\n').map((paragraph, index) => (
-        <Typography key={index} variant="body1" style={{ marginBottom: '8px' }}>
+        <Typography key={index} variant="body1" style={{ marginBottom: '8px', textAlign: 'justify' }}>
             {paragraph}
-        </Typography>
+        </Typography >
     ));
 
     return <>{paragraphs}</>;
@@ -99,7 +100,7 @@ const Experience: React.FC = () => {
                                         width: 56,
                                         height: 56,
                                         borderRadius: '50%',
-                                        bgcolor: 'background.paper',
+                                        bgcolor: experience.icon.color,
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
@@ -107,7 +108,7 @@ const Experience: React.FC = () => {
                                     }}
                                 >
                                     <img
-                                        src={experience.icon}
+                                        src={experience.icon.image}
                                         alt={`${experience.company} logo`}
                                         style={{ width: 40, height: 40, borderRadius: '50%' }}
                                     />
