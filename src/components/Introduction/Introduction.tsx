@@ -4,12 +4,12 @@ import myImage from '../../assets/images/isuru.jpg';
 
 const Introduction: React.FC = () => {
     return (
-        <Container sx={{ height: '100vh', display: 'flex', alignItems: 'center' }}>
-            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Typography variant="h4" component="h1" sx={{ textAlign: 'left', padding: 4 }}>
+        <Container sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ flex: 1, padding: 4 }}>
+                <Typography variant="h4" component="h1" sx={{ textAlign: 'left', marginBottom: 2 }}>
                     Welcome to My Portfolio
                 </Typography>
-                <Typography variant="body1" component="p" sx={{ textAlign: 'left', padding: 4 }}>
+                <Typography variant="body1" component="p" sx={{ textAlign: 'left' }}>
                     I am an experienced IT developer with a passion for creating innovative solutions in the field of technology.
                     With a strong background in software development and project management, I have successfully led and contributed
                     to various projects, ranging from mobile connectivity to real-time data logging and cloud infrastructure deployment.

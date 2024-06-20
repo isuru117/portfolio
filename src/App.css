@@ -25,7 +25,6 @@
 }
 
 .app-container {
-  margin-top: 80px;
   padding: 20px;
   height: 100vh;
 }
@@ -57,7 +56,7 @@
 }
 
 .main-content {
-  padding-top: 90px;
+  padding-top: 50px;
 }
 
 body {
