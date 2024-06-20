@@ -1,15 +1,25 @@
 import React from 'react';
-import { Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
+import myImage from '../../assets/images/isuru.jpg';
 
 const Introduction: React.FC = () => {
     return (
-        <Container id="introduction">
-            <Typography variant="h2" gutterBottom>
-                Welcome to My Bio
-            </Typography>
-            <Typography variant="body1">
-                Hello! I'm [Your Name], a [Your Profession]. Welcome to my personal bio website where you can learn more about my work and connect with me.
-            </Typography>
+        <Container sx={{ height: '100vh', display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Typography variant="h4" component="h1" sx={{ textAlign: 'left', padding: 4 }}>
+                    Welcome to My Portfolio
+                </Typography>
+                <Typography variant="body1" component="p" sx={{ textAlign: 'left', padding: 4 }}>
+                    I am an experienced IT developer with a passion for creating innovative solutions in the field of technology.
+                    With a strong background in software development and project management, I have successfully led and contributed
+                    to various projects, ranging from mobile connectivity to real-time data logging and cloud infrastructure deployment.
+                    My expertise lies in utilizing modern technologies to drive efficiency and enhance user experiences. Explore my
+                    portfolio to learn more about my journey and the impactful projects I've been a part of.
+                </Typography>
+            </Box>
+            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src={myImage} alt="Introduction" style={{ maxWidth: '100%', height: 'auto' }} />
+            </Box>
         </Container>
     );
 };
