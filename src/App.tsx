@@ -17,23 +17,21 @@ const App: React.FC = () => {
 
   return (
     <CSSTransition in={inProp} classNames="fade" timeout={600}>
-      <div>
-        <Router>
-          <NavBar />
-          <div id="introduction" className="main-content">
-            <Introduction />
-          </div>
-          <div id="experience" className="main-content">
-            <Experience />
-          </div>
-          <div id="socials" className="main-content">
-            <Socials />
-          </div>
-          <div id="contact" className="main-content">
-            <Contact />
-          </div>
-        </Router>
-      </div>
+      <Router>
+        <NavBar />
+        <div id="introduction" className="main-content">
+          <Introduction />
+        </div>
+        <div id="experience" className="main-content">
+          <Experience />
+        </div>
+        <div id="socials" className="main-content">
+          <Socials />
+        </div>
+        <div id="contact" className="main-content">
+          <Contact />
+        </div>
+      </Router>
     </CSSTransition>
   );
 };
