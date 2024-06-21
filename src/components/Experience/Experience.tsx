@@ -132,7 +132,7 @@ const Experience: React.FC = () => {
 
     return (
         <Container>
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h2" className="section-heading" gutterBottom>
                 Experience
             </Typography>
             <Box sx={{

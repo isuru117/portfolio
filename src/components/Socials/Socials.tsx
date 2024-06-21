@@ -12,7 +12,7 @@ const socials = [
 const Socials: React.FC = () => {
     return (
         <Container id="socials">
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h2" className="section-heading" gutterBottom>
                 Socials
             </Typography>
             <List>
