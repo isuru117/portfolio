@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Container, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Link as ScrollLink, scroller } from 'react-scroll';
 import myImage from '../../assets/images/isuru.png';
 import backgroundImage from '../../assets/images/bridge.jpg';
 
@@ -23,55 +24,75 @@ const Introduction: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const scrollToSection = (sectionId: string) => {
+        scroller.scrollTo(sectionId, {
+            duration: 800,
+            delay: 0,
+            smooth: 'easeInOutQuart',
+            offset: -50
+        });
+    };
+
     return (
-        <Box 
-            sx={{ 
-                position: 'relative', 
-                minHeight: '100vh', 
-                backgroundImage: `url(${backgroundImage})`, 
-                backgroundSize: 'cover', 
-                backgroundPosition: 'center' 
+        <Box
+            sx={{
+                position: 'relative',
+                minHeight: '100vh',
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
             }}
         >
-            <Box 
-                sx={{ 
-                    position: 'absolute', 
-                    top: 0, 
-                    right: 0, 
-                    bottom: 0, 
-                    left: 0, 
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)' 
-                }} 
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                }}
             />
-            <Container 
-                sx={{ 
-                    position: 'relative', 
-                    display: 'flex', 
-                    flexDirection: isMobile ? 'column' : 'row', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    minHeight: '100vh', 
-                    color: 'white', 
-                    padding: 2 
+            <Container
+                sx={{
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: isMobile ? 'column' : 'row',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    minHeight: '100vh',
+                    color: 'white',
+                    padding: 2
                 }}
             >
-                <Box 
-                    sx={{ 
-                        flex: 1, 
-                        display: 'flex', 
-                        justifyContent: 'center', 
-                        alignItems: 'center', 
-                        order: isMobile ? 0 : 1, 
-                        padding: 1 
+                <Box
+                    sx={{
+                        flex: 1,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        order: isMobile ? 0 : 1,
+                        padding: 1
                     }}
                 >
-                    <img src={myImage} alt="Introduction" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <Box
+                        component="img"
+                        src={myImage}
+                        alt="Introduction"
+                        sx={{
+                            width: { xs: '35vh', md: '40vh' },
+                            height: { xs: '35vh', md: '40vh' },
+                            borderRadius: '50%',
+                            objectFit: 'cover',
+                            backgroundColor: 'rgba(0, 0, 100, 0.95)' /* Light gray fill color */,
+                        }}
+                    />
                 </Box>
-                <Box 
-                    sx={{ 
-                        flex: 1, 
-                        padding: 1, 
-                        order: isMobile ? 1 : 0 
+                <Box
+                    sx={{
+                        flex: 1,
+                        padding: 1,
+                        order: isMobile ? 1 : 0
                     }}
                 >
                     <Typography variant="h4" component="h1" sx={{ textAlign: 'left', marginBottom: 2 }}>
@@ -86,16 +107,19 @@ const Introduction: React.FC = () => {
                 </Box>
             </Container>
             {showArrow && (
-                <Box 
-                    sx={{ 
-                        position: 'absolute', 
-                        bottom: 16, 
-                        left: '50%', 
-                        transform: 'translateX(-50%)', 
-                        animation: 'blink 1.5s infinite' 
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        bottom: 16,
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        animation: 'blink 1.5s infinite',
+                        cursor: 'pointer'
                     }}
                 >
-                    <KeyboardArrowDownIcon sx={{ fontSize: 48, color: 'white' }} />
+                    <ScrollLink onClick={() => scrollToSection('experience')} to="experience">
+                        <KeyboardArrowDownIcon sx={{ fontSize: 48, color: 'white' }} />
+                    </ScrollLink>
                 </Box>
             )}
             <style>
