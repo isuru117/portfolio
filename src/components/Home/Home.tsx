@@ -86,7 +86,7 @@ const Home: React.FC = () => {
                     <Box
                         component="img"
                         src={myImage}
-                        alt="Introduction"
+                        alt="Home"
                         sx={{
                             width: { xs: '35vh', md: '40vh' },
                             height: { xs: '35vh', md: '40vh' },
@@ -107,10 +107,10 @@ const Home: React.FC = () => {
                         alignItems: 'flex-start'
                     }}
                 >
-                    <Typography variant="body1" component="p" sx={{ textAlign: 'left', marginBottom: 2 }}>
+                    <Typography variant="h6" component="h6" sx={{ textAlign: 'left', marginBottom: 2 }}>
                         Hey there! My name is Isuru Edirisinghe
                     </Typography>
-                    <Typography variant="h4" component="h1" sx={{ textAlign: 'left' }}>
+                    <Typography variant="h4" component="h4" sx={{ textAlign: 'justify', textAlignLast: 'left' }}>
                         I’m a Full Stack Software Engineer, specialized in development of web applications using React, .NET, Node.js & more
                     </Typography>
                     <List sx={{ display: 'flex', justifyContent: 'flex-start', gap: 2, marginTop: 2 }}>

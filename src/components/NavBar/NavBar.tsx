@@ -55,8 +55,8 @@ const NavBar: React.FC = () => {
                 </Hidden>
                 {/* Regular Navigation Links for Desktop */}
                 <Hidden smDown>
-                    <Button color="inherit" component={ScrollLinkWrapper} onClick={() => scrollToSection('introduction')} to="introduction" >
-                        Introduction
+                    <Button color="inherit" component={ScrollLinkWrapper} onClick={() => scrollToSection('home')} to="home" >
+                        Home
                     </Button>
                     <Button color="inherit" component={ScrollLinkWrapper} onClick={() => scrollToSection('about')} to="about">
                         About
@@ -79,8 +79,8 @@ const NavBar: React.FC = () => {
             >
                 <div>
                     <List>
-                        <ListItemButton component={ScrollLinkWrapper} to="introduction" smooth duration={500} onClick={toggleDrawer(false)}>
-                            <ListItemText primary="Introduction" />
+                        <ListItemButton component={ScrollLinkWrapper} to="home" smooth duration={500} onClick={toggleDrawer(false)}>
+                            <ListItemText primary="Home" />
                         </ListItemButton>
                         <ListItemButton component={ScrollLinkWrapper} to="about" smooth duration={500} onClick={toggleDrawer(false)}>
                             <ListItemText primary="About" />

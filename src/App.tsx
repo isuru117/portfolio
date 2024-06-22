@@ -30,7 +30,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <NavBar />
-      <Section id="introduction">
+      <Section id="home">
         <Home />
       </Section>
       <Section id="about">
