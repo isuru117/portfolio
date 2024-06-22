@@ -58,11 +58,11 @@ const NavBar: React.FC = () => {
                     <Button color="inherit" component={ScrollLinkWrapper} onClick={() => scrollToSection('introduction')} to="introduction" >
                         Introduction
                     </Button>
+                    <Button color="inherit" component={ScrollLinkWrapper} onClick={() => scrollToSection('about')} to="about">
+                        About
+                    </Button>
                     <Button color="inherit" component={ScrollLinkWrapper} onClick={() => scrollToSection('experience')} to="experience">
                         Experience
-                    </Button>
-                    <Button color="inherit" component={ScrollLinkWrapper} onClick={() => scrollToSection('socials')} to="socials">
-                        Socials
                     </Button>
                     <Button color="inherit" component={ScrollLinkWrapper} onClick={() => scrollToSection('contact')} to="contact">
                         Contact
@@ -82,11 +82,11 @@ const NavBar: React.FC = () => {
                         <ListItemButton component={ScrollLinkWrapper} to="introduction" smooth duration={500} onClick={toggleDrawer(false)}>
                             <ListItemText primary="Introduction" />
                         </ListItemButton>
+                        <ListItemButton component={ScrollLinkWrapper} to="about" smooth duration={500} onClick={toggleDrawer(false)}>
+                            <ListItemText primary="about" />
+                        </ListItemButton>
                         <ListItemButton component={ScrollLinkWrapper} to="experience" smooth duration={500} onClick={toggleDrawer(false)}>
                             <ListItemText primary="Experience" />
-                        </ListItemButton>
-                        <ListItemButton component={ScrollLinkWrapper} to="socials" smooth duration={500} onClick={toggleDrawer(false)}>
-                            <ListItemText primary="Socials" />
                         </ListItemButton>
                         <ListItemButton component={ScrollLinkWrapper} to="contact" smooth duration={500} onClick={toggleDrawer(false)}>
                             <ListItemText primary="Contact" />

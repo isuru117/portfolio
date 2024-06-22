@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import NavBar from './components/NavBar/NavBar';
 import Introduction from './components/Introduction/Introduction';
 import Experience from './components/Experience/Experience';
-import Socials from './components/Socials/Socials';
+import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import './App.css';
 
@@ -33,11 +33,11 @@ const App: React.FC = () => {
       <Section id="introduction">
         <Introduction />
       </Section>
+      <Section id="about">
+        <About />
+      </Section>
       <Section id="experience">
         <Experience />
-      </Section>
-      <Section id="socials">
-        <Socials />
       </Section>
       <Section id="contact">
         <Contact />
