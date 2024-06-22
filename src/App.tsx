@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import NavBar from './components/NavBar/NavBar';
-import Introduction from './components/Introduction/Introduction';
+import Home from './components/Home/Home';
 import Experience from './components/Experience/Experience';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
@@ -31,7 +31,7 @@ const App: React.FC = () => {
     <Router>
       <NavBar />
       <Section id="introduction">
-        <Introduction />
+        <Home />
       </Section>
       <Section id="about">
         <About />

@@ -7,7 +7,7 @@ import myImage from '../../assets/images/isuru.png';
 import backgroundImage from '../../assets/images/bridge.jpg';
 import { LinkedIn, GitHub, Twitter } from '@mui/icons-material';
 
-const Introduction: React.FC = () => {
+const Home: React.FC = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [showArrow, setShowArrow] = useState(true);
@@ -92,7 +92,7 @@ const Introduction: React.FC = () => {
                             borderRadius: '50%',
                             objectFit: 'cover',
                             border: '5px solid transparent',
-                            backgroundColor: 'rgba(253,250,114, 0.8)' /* Light gray fill color */,
+                            backgroundColor: 'rgba(253,250,114, 0.8)',
                         }}
                     />
                 </Box>
@@ -103,14 +103,11 @@ const Introduction: React.FC = () => {
                         order: isMobile ? 1 : 0
                     }}
                 >
-                    <Typography variant="h4" component="h1" sx={{ textAlign: 'left', marginBottom: 2 }}>
-                        Hello! My name is Isuru Edirisinghe
+                    <Typography variant="body1" component="p" sx={{ textAlign: 'left', marginBottom: 2 }}>
+                        Hey there! My name is Isuru Edirisinghe
                     </Typography>
-                    <Typography variant="body1" component="p" sx={{ textAlign: 'left' }}>
-                        I am an experienced IT developer with a passion for creating innovative solutions in the field of technology.
-                        With a strong background in software development and project management, I have successfully led and contributed
-                        to various projects, ranging from mobile connectivity to real-time data logging and cloud infrastructure deployment.
-                        My expertise lies in utilizing modern technologies to drive efficiency and enhance user experiences.
+                    <Typography variant="h4" component="h1" sx={{ textAlign: 'left' }}>
+                        I’m a full stack developer, specialized in development of web applications using React, .NET, Node.js & more
                     </Typography>
                     <List sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
                         {socials.map((social, index) => (
@@ -132,7 +129,7 @@ const Introduction: React.FC = () => {
                                         transform: 'scale(1.2)',
                                         backgroundColor: 'white',
                                         '& .MuiListItemIcon-root': {
-                                            color: 'black', // Change icon color on hover
+                                            color: 'black',
                                         },
                                     },
                                 }}
@@ -160,12 +157,27 @@ const Introduction: React.FC = () => {
                         bottom: 16,
                         left: '50%',
                         transform: 'translateX(-50%)',
-                        animation: 'blink 1.5s infinite',
-                        cursor: 'pointer'
+                        cursor: 'pointer',
+                        textAlign: 'center',
                     }}
                 >
                     <ScrollLink onClick={() => scrollToSection('experience')} to="experience">
-                        <KeyboardArrowDownIcon sx={{ fontSize: 48, color: 'white' }} />
+                        <Typography
+                            sx={{
+                                color: 'white',
+                                marginBottom: 1
+                            }}
+                        >
+                            More About Me
+                        </Typography>
+
+                        <KeyboardArrowDownIcon
+                            sx={{
+                                fontSize: 48,
+                                color: 'white',
+                                animation: 'blink 1.5s infinite',
+                            }}
+                        />
                     </ScrollLink>
                 </Box>
             )}
@@ -181,4 +193,4 @@ const Introduction: React.FC = () => {
     );
 };
 
-export default Introduction;
+export default Home;
