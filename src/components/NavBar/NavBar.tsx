@@ -83,7 +83,7 @@ const NavBar: React.FC = () => {
                             <ListItemText primary="Introduction" />
                         </ListItemButton>
                         <ListItemButton component={ScrollLinkWrapper} to="about" smooth duration={500} onClick={toggleDrawer(false)}>
-                            <ListItemText primary="about" />
+                            <ListItemText primary="About" />
                         </ListItemButton>
                         <ListItemButton component={ScrollLinkWrapper} to="experience" smooth duration={500} onClick={toggleDrawer(false)}>
                             <ListItemText primary="Experience" />
