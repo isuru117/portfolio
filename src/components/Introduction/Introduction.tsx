@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Container, Typography, useMediaQuery } from '@mui/material';
+import { Box, Container, List, ListItem, ListItemIcon, ListItemText, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link as ScrollLink, scroller } from 'react-scroll';
 import myImage from '../../assets/images/isuru.png';
 import backgroundImage from '../../assets/images/bridge.jpg';
+import { LinkedIn, GitHub, Twitter } from '@mui/icons-material';
 
 const Introduction: React.FC = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [showArrow, setShowArrow] = useState(true);
+
+    const socials = [
+        { name: 'LinkedIn', icon: <LinkedIn />, link: 'https://www.linkedin.com/in/isuru117' },
+        { name: 'GitHub', icon: <GitHub />, link: 'https://github.com/isuru117/' },
+        { name: 'Twitter', icon: <Twitter />, link: 'https://twitter.com/isuru117' },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -84,7 +91,7 @@ const Introduction: React.FC = () => {
                             height: { xs: '35vh', md: '40vh' },
                             borderRadius: '50%',
                             objectFit: 'cover',
-                            border:  '5px solid transparent',
+                            border: '5px solid transparent',
                             backgroundColor: 'rgba(253,250,114, 0.8)' /* Light gray fill color */,
                         }}
                     />
@@ -105,6 +112,48 @@ const Introduction: React.FC = () => {
                         to various projects, ranging from mobile connectivity to real-time data logging and cloud infrastructure deployment.
                         My expertise lies in utilizing modern technologies to drive efficiency and enhance user experiences.
                     </Typography>
+                    <List sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+                        {socials.map((social, index) => (
+                            <ListItem
+                                key={index}
+                                component="a"
+                                href={social.link}
+                                sx={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: { xs: '60px', md: '80px' },
+                                    height: { xs: '60px', md: '80px' },
+                                    borderRadius: '8px',
+                                    transition: 'background-color 0.3s, transform 0.3s',
+                                    textDecoration: 'none',
+                                    color: 'inherit',
+                                    '&:hover': {
+                                        transform: 'scale(1.2)',
+                                        backgroundColor: 'white',
+                                        '& .MuiListItemIcon-root': {
+                                            color: 'black', // Change icon color on hover
+                                        },
+                                    },
+                                }}
+                            >
+                                <ListItemIcon
+                                    sx={{
+                                        color: 'white',
+                                        minWidth: 'auto',
+                                        fontSize: { xs: '40px', md: '50px' },
+                                    }}
+                                >
+                                    {React.cloneElement(social.icon, {
+                                        style: { fontSize: 'inherit' },
+                                    })}
+                                </ListItemIcon>
+                            </ListItem>
+                        ))}
+                    </List>
+
+
+
                 </Box>
             </Container>
             {showArrow && (
