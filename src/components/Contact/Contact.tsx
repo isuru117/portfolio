@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
 
     return (
         <Container id="contact">
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h2" className="section-heading"  gutterBottom>
                 Contact
             </Typography>
             <form onSubmit={handleSubmit}>

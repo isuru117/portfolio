@@ -21,7 +21,7 @@ const App: React.FC = () => {
     });
 
     return (
-      <div id={id} ref={ref} className={`app-section main-content section ${inView ? 'fade-in' : ''}`}>
+      <div id={id} ref={ref} className={`app-section section ${inView ? 'fade-in' : ''}`}>
         {children}
       </div>
     );

@@ -31,7 +31,7 @@ const NavBar: React.FC = () => {
     };
 
     return (
-        <AppBar position="sticky" className="navbar"
+        <AppBar position="fixed" className="navbar"
             sx={{
                 boxShadow: 'none',
                 background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))',
