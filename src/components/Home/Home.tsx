@@ -107,7 +107,7 @@ const Home: React.FC = () => {
                         Hey there! My name is Isuru Edirisinghe
                     </Typography>
                     <Typography variant="h4" component="h1" sx={{ textAlign: 'left' }}>
-                        I’m a full stack developer, specialized in development of web applications using React, .NET, Node.js & more
+                        I’m a Full Stack Software Engineer, specialized in development of web applications using React, .NET, Node.js & more
                     </Typography>
                     <List sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
                         {socials.map((social, index) => (
