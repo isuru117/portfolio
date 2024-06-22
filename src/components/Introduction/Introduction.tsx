@@ -50,7 +50,7 @@ const Introduction: React.FC = () => {
                     right: 0,
                     bottom: 0,
                     left: 0,
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)'
                 }}
             />
             <Container
@@ -84,7 +84,8 @@ const Introduction: React.FC = () => {
                             height: { xs: '35vh', md: '40vh' },
                             borderRadius: '50%',
                             objectFit: 'cover',
-                            backgroundColor: 'rgba(0, 0, 100, 0.95)' /* Light gray fill color */,
+                            border:  '5px solid transparent',
+                            backgroundColor: 'rgba(253,250,114, 0.8)' /* Light gray fill color */,
                         }}
                     />
                 </Box>
