@@ -66,8 +66,15 @@ body {
   scroll-behavior: smooth;
 }
 
-.section-heading{
+.section-heading {
   padding-top: 50px;
+  font-size: 2rem;
+}
+
+@media (max-width: 700px) {
+  .section-heading {
+    font-size: 1.5rem;
+  }
 }
 
 .app-section {

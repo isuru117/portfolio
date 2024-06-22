@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link as ScrollLink, scroller } from 'react-scroll';
 import myImage from '../../assets/images/isuru.png';
 import backgroundImage from '../../assets/images/bridge.jpg';
-import { LinkedIn, GitHub, Twitter } from '@mui/icons-material';
+import { LinkedIn, GitHub, Twitter, Mail } from '@mui/icons-material';
 
 const Home: React.FC = () => {
     const theme = useTheme();
@@ -16,6 +16,7 @@ const Home: React.FC = () => {
         { name: 'LinkedIn', icon: <LinkedIn />, link: 'https://www.linkedin.com/in/isuru117' },
         { name: 'GitHub', icon: <GitHub />, link: 'https://github.com/isuru117/' },
         { name: 'Twitter', icon: <Twitter />, link: 'https://twitter.com/isuru117' },
+        { name: 'Mail', icon: <Mail />, link: 'mailto:isuruedirisinghe80@gmail.com' },
     ];
 
     useEffect(() => {
@@ -100,7 +101,10 @@ const Home: React.FC = () => {
                     sx={{
                         flex: 1,
                         padding: 1,
-                        order: isMobile ? 1 : 0
+                        order: isMobile ? 1 : 0,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'flex-start'
                     }}
                 >
                     <Typography variant="body1" component="p" sx={{ textAlign: 'left', marginBottom: 2 }}>
@@ -109,7 +113,7 @@ const Home: React.FC = () => {
                     <Typography variant="h4" component="h1" sx={{ textAlign: 'left' }}>
                         I’m a Full Stack Software Engineer, specialized in development of web applications using React, .NET, Node.js & more
                     </Typography>
-                    <List sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+                    <List sx={{ display: 'flex', justifyContent: 'flex-start', gap: 2, marginTop: 2 }}>
                         {socials.map((social, index) => (
                             <ListItem
                                 key={index}
@@ -150,7 +154,7 @@ const Home: React.FC = () => {
                     </List>
                 </Box>
             </Container>
-            {showArrow && (
+            {showArrow && !isMobile && (
                 <Box
                     sx={{
                         position: 'absolute',
