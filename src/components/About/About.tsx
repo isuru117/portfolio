@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, List, ListItem, ListItemIcon, ListItemText, Box } from '@mui/material';
+import { Container, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { LinkedIn, GitHub, Twitter } from '@mui/icons-material';
 
 const socials = [

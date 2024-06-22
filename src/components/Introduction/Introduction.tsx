@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Container, List, ListItem, ListItemIcon, ListItemText, Typography, useMediaQuery } from '@mui/material';
+import { Box, Container, List, ListItem, ListItemIcon, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link as ScrollLink, scroller } from 'react-scroll';
@@ -151,9 +151,6 @@ const Introduction: React.FC = () => {
                             </ListItem>
                         ))}
                     </List>
-
-
-
                 </Box>
             </Container>
             {showArrow && (
