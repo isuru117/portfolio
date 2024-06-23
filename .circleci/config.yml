@@ -2,43 +2,41 @@ version: 2.1
 
 jobs:
   build:
-    working_directory: ~/repo
     docker:
       - image: cimg/node:18.10.0
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - setup_remote_docker:
+          version: default
       - run:
-          name: Install Dependencies
-          command: npm install
+          name: Build Docker Image
+          command: docker build -t portfolio-app .
       - run:
-          name: Build Application
-          command: npm run build
-      - run:
-          name: Run Tests
-          command: npm run test
+          name: Save Docker Image to Tar
+          command: docker save -o portfolio-app.tar portfolio-app
       - persist_to_workspace:
           root: .
           paths:
-            - build
+            - portfolio-app.tar
 
   deploy:
     docker:
-      - image: arvindr226/alpine-ssh
+      - image: docker:19.03.12
     steps:
       - attach_workspace:
-          at: ~/repo
+          at: /workspace
       - run:
-          name: Copy Build to Remote Server
-          command: |
-            scp -r -o StrictHostKeyChecking=no ~/repo/build/* $USER@$DNS:/path/to/remote/app
+          name: Copy Docker Image to Remote
+          command: scp -oStrictHostKeyChecking=no /workspace/portfolio-app.tar $USER@$DNS:/home/ubuntu/
       - run:
-          name: Run Deploy Script on Remote Server
-          command: ssh -oStrictHostKeyChecking=no -v $USER@$DNS "./deploy.sh"
+          name: Load Docker Image on Remote
+          command: ssh -oStrictHostKeyChecking=no $USER@$DNS "docker load -i /home/ubuntu/portfolio-app.tar"
+      - run:
+          name: Run Docker Container on Remote
+          command: ssh -oStrictHostKeyChecking=no $USER@$DNS "docker run -d -p 80:3000 portfolio-app"
 
 workflows:
-  build-and-deploy:
+  build-deploy:
     jobs:
       - build
       - deploy:
