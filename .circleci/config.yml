@@ -1,0 +1,46 @@
+version: 2.1
+
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: cimg/node:18.10.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Build Application
+          command: npm run build
+      - run:
+          name: Run Tests
+          command: npm run test
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+
+  deploy:
+    docker:
+      - image: arvindr226/alpine-ssh
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Copy Build to Remote Server
+          command: |
+            scp -r -o StrictHostKeyChecking=no ~/repo/build/* $USER@$DNS:/path/to/remote/app
+      - run:
+          name: Run Deploy Script on Remote Server
+          command: ssh -oStrictHostKeyChecking=no -v $USER@$DNS "./deploy.sh"
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
