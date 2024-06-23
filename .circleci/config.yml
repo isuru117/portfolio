@@ -21,7 +21,7 @@ jobs:
 
   deploy:
     docker:
-      - image: arvindr226/alpine-ssh
+      - image: docker:19.03.12
     steps:
       - attach_workspace:
           at: /workspace
