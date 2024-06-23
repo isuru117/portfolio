@@ -1,5 +1,5 @@
-# Use the arm64v8/node base image, which is compatible with ARM64 architecture
-FROM arm64v8/node
+# Use an official Node.js LTS (Long Term Support) image
+FROM node:14-alpine
 
 # Set working directory inside the container
 WORKDIR /app
