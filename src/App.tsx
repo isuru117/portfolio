@@ -7,6 +7,7 @@ import Experience from './components/Experience/Experience';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import './App.css';
+import Footer from './components/Footer/Footer';
 
 const App: React.FC = () => {
 
@@ -42,6 +43,7 @@ const App: React.FC = () => {
       <Section id="contact">
         <Contact />
       </Section>
+      <Footer />
     </Router>
   );
 };
