@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItemText, Divider, Hidden, Button, ListItemButton } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItemText, Divider, Hidden, Button, ListItemButton, styled } from '@mui/material';
 import { Link as ScrollLink, scroller } from 'react-scroll';
 import MenuIcon from '@mui/icons-material/Menu';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import './NavBar.css';
 
 const NavBar: React.FC = () => {
@@ -29,6 +30,35 @@ const NavBar: React.FC = () => {
             offset: -50
         });
     };
+
+    const ForkButton = styled('a')({
+        display: 'flex',
+        alignItems: 'center',
+        textDecoration: 'none',
+        color: 'inherit',
+        backgroundColor: '#333',
+        padding: '6px 12px',
+        borderRadius: '4px',
+        transition: 'width 0.3s ease',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        width: '24px',
+        '&:hover': {
+            width: '140px',
+            backgroundColor: '#555',
+        },
+        '& .fork-text': {
+            display: 'none',
+            opacity: 0,
+            transition: 'opacity 0.3s, margin-left 0.3s ease',
+            marginLeft: '0px',
+        },
+        '&:hover .fork-text': {
+            display: 'inline',
+            opacity: 1,
+            marginLeft: '8px',
+        },
+    });
 
     return (
         <AppBar position="fixed" className="navbar"
@@ -67,6 +97,14 @@ const NavBar: React.FC = () => {
                     <Button color="inherit" component={ScrollLinkWrapper} onClick={() => scrollToSection('contact')} to="contact">
                         Contact
                     </Button>
+                    <ForkButton
+                        href="https://github.com/isuru117/portfolio/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <GitHubIcon />
+                        <span className="fork-text">Fork on GitHub</span>
+                    </ForkButton>
                 </Hidden>
             </Toolbar>
             {/* Drawer for Mobile */}
