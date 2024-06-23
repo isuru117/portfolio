@@ -7,26 +7,33 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-          version: 20.10.12
-      - run:
-          name: Install Dependencies
-          command: npm install
+          version: default
       - run:
           name: Build Docker Image
           command: docker build -t portfolio-app .
+      - run:
+          name: Save Docker Image to Tar
+          command: docker save -o portfolio-app.tar portfolio-app
+      - persist_to_workspace:
+          root: .
+          paths:
+            - portfolio-app.tar
 
   deploy:
     docker:
-      - image: cimg/base:stable
+      - image: arvindr226/alpine-ssh
     steps:
+      - attach_workspace:
+          at: /workspace
       - run:
-          name: Transfer and Load Docker Image on Remote
-          command: |
-            docker save portfolio-app | gzip | DOCKER_HOST=ssh://$USER@$DNS docker load
+          name: Copy Docker Image to Remote
+          command: scp -oStrictHostKeyChecking=no /workspace/portfolio-app.tar $USER@$DNS:/home/ubuntu/
+      - run:
+          name: Load Docker Image on Remote
+          command: ssh -oStrictHostKeyChecking=no $USER@$DNS "docker load -i /home/ubuntu/portfolio-app.tar"
       - run:
           name: Run Docker Container on Remote
-          command: |
-            ssh -oStrictHostKeyChecking=no $USER@$DNS "docker run -d -p 80:3000 portfolio-app"
+          command: ssh -oStrictHostKeyChecking=no $USER@$DNS "docker run -d -p 80:3000 portfolio-app"
 
 workflows:
   build-deploy:
