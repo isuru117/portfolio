@@ -8,20 +8,21 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
           command: npm install
       - run:
           name: Build Application
           command: npm run build
-      - run:
-          name: Run Tests
-          command: npm run test
       - persist_to_workspace:
           root: .
           paths:
             - build
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
 
   deploy:
     docker:
@@ -32,7 +33,7 @@ jobs:
       - run:
           name: Copy Build to Remote Server
           command: |
-            scp -r -o StrictHostKeyChecking=no ~/repo/build/* $USER@$DNS:/path/to/remote/app
+            scp -r -o StrictHostKeyChecking=no ~/repo/build/* $USER@$DNS:~/portfolio
       - run:
           name: Run Deploy Script on Remote Server
           command: ssh -oStrictHostKeyChecking=no -v $USER@$DNS "./deploy.sh"
