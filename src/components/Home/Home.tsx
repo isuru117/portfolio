@@ -165,7 +165,7 @@ const Home: React.FC = () => {
                         textAlign: 'center',
                     }}
                 >
-                    <ScrollLink onClick={() => scrollToSection('experience')} to="experience">
+                    <ScrollLink onClick={() => scrollToSection('about')} to="about">
                         <Typography
                             sx={{
                                 color: 'white',
