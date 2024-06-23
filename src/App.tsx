@@ -11,7 +11,7 @@ import './App.css';
 const App: React.FC = () => {
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.history.scrollRestoration = 'manual';
   }, []);
 
   const Section: React.FC<any> = ({ id, children }) => {
