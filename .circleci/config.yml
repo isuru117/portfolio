@@ -2,44 +2,36 @@ version: 2.1
 
 jobs:
   build:
-    working_directory: ~/repo
     docker:
-      - image: cimg/node:18.10.0
+      - image: docker:20.10.7
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - setup_remote_docker:
+          version: 20.10.7
       - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: Build Application
-          command: npm run build
+          name: Build Docker Image
+          command: docker build -t portfolio-app .
       - persist_to_workspace:
           root: .
           paths:
-            - build
-      - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-          paths:
-            - node_modules
+            - .
 
   deploy:
     docker:
       - image: arvindr226/alpine-ssh
     steps:
       - attach_workspace:
-          at: ~/repo
+          at: /workspace
       - run:
-          name: Copy Build to Remote Server
+          name: Transfer and Load Docker Image on Remote
           command: |
-            scp -r -o StrictHostKeyChecking=no ~/repo/build/* $USER@$DNS:~/portfolio
+            docker save portfolio-app | bzip2 | pv | ssh -oStrictHostKeyChecking=no $USER@$DNS "docker load"
       - run:
-          name: Run Deploy Script on Remote Server
-          command: ssh -oStrictHostKeyChecking=no -v $USER@$DNS "./deploy.sh"
+          name: Run Docker Container on Remote
+          command: ssh -oStrictHostKeyChecking=no $USER@$DNS "docker run -d -p 80:3000 portfolio-app"
 
 workflows:
-  build-and-deploy:
+  build-deploy:
     jobs:
       - build
       - deploy:
