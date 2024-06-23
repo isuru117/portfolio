@@ -11,13 +11,6 @@ jobs:
       - run:
           name: Build Docker Image
           command: docker build -t portfolio-app .
-      - run:
-          name: Save Docker Image to Tar
-          command: docker save -o portfolio-app.tar portfolio-app
-      - persist_to_workspace:
-          root: .
-          paths:
-            - portfolio-app.tar
 
   deploy:
     docker:
