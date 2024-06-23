@@ -14,24 +14,19 @@ jobs:
       - run:
           name: Build Docker Image
           command: docker build -t portfolio-app .
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
 
   deploy:
     docker:
       - image: cimg/base:stable
     steps:
-      - attach_workspace:
-          at: /workspace
       - run:
           name: Transfer and Load Docker Image on Remote
           command: |
-            docker save portfolio-app | bzip2 | pv | ssh -oStrictHostKeyChecking=no $USER@$DNS "docker load"
+            docker save portfolio-app | gzip | DOCKER_HOST=ssh://$USER@$DNS docker load
       - run:
           name: Run Docker Container on Remote
-          command: ssh -oStrictHostKeyChecking=no $USER@$DNS "docker run -d -p 80:3000 portfolio-app"
+          command: |
+            ssh -oStrictHostKeyChecking=no $USER@$DNS "docker run -d -p 80:3000 portfolio-app"
 
 workflows:
   build-deploy:
