@@ -1,6 +1,6 @@
 const BASE_URL = process.env.REACT_APP_API_URL;
 
-export async function submitContactForm(name: string, email: string, message: string): Promise<boolean> {
+export async function submitContactForm(name: string, email: string, message: string, maxRetries: number = 2): Promise<boolean> {
     const endpoint = `${BASE_URL}/ContactMe`;
 
     const formData = {
@@ -26,6 +26,16 @@ export async function submitContactForm(name: string, email: string, message: st
         }
     } catch (error) {
         console.error('An error occurred while submitting contact form:', error);
-        return false;
+
+        // server not up, retry to send request with a 3 second delay
+
+        if (maxRetries > 0) {
+            console.log(`Retrying (${maxRetries} attempts left)...`);
+            await new Promise(resolve => setTimeout(resolve, 3000));
+            return submitContactForm(name, email, message, maxRetries - 1);
+        } else {
+            console.error('Maximum retries exceeded. Could not submit form.');
+            return false;
+        }
     }
 }
