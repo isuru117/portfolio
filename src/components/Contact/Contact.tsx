@@ -15,6 +15,7 @@ const Contact: React.FC = () => {
         if (submitted) {
             setName('');
             setEmail('');
+            alert('Thank you for your query! I will reach out as soon as possible.');
         } else {
             alert('Failed to send message. Please try again later.');
         }
