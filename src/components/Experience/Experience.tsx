@@ -9,7 +9,7 @@ import './Experience.css';
 
 const experiences = [
     {
-        date: 'Nov. 2022 - Present',
+        date: 'Nov. 2022 - Aug. 2024',
         title: 'IT Developer (Apprentice)',
         company: 'Peugeot Motocycles',
         description: `
