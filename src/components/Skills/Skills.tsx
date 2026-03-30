@@ -35,7 +35,7 @@ const Skills = () => {
         <Grid container spacing={3}>
           {skillCategories.map((category, catIndex) => (
             <Grid key={category.key} size={{ xs: 12, sm: 6, md: 4 }}>
-              <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 * catIndex }}>
+              <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 * catIndex }} style={{ height: "100%" }}>
                 <Paper elevation={0} sx={{ p: 3, height: "100%", background: "rgba(10, 25, 47, 0.7)", border: "1px solid rgba(100, 255, 218, 0.1)", transition: "all 0.3s ease", "&:hover": { border: "1px solid rgba(100, 255, 218, 0.3)", transform: "translateY(-4px)" } }}>
                   <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                     <Box sx={{ color: "#64ffda", mr: 1.5, display: "flex" }}>{category.icon}</Box>

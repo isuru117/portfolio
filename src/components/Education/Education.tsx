@@ -26,7 +26,7 @@ const Education = () => {
         <Grid container spacing={3}>
           {entries.map((edu, index) => (
             <Grid key={index} size={{ xs: 12, md: 6 }}>
-              <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.2 * index }}>
+              <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.2 * index }} style={{ height: "100%" }}>
                 <Paper elevation={0} sx={{ p: 3, height: "100%", background: "rgba(10, 25, 47, 0.7)", border: "1px solid rgba(100, 255, 218, 0.1)", transition: "all 0.3s ease", "&:hover": { border: "1px solid rgba(100, 255, 218, 0.3)", transform: "translateY(-4px)" } }}>
                   <Box sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}>
                     <Box sx={{ p: 1, borderRadius: 1, background: "rgba(100, 255, 218, 0.1)", color: "#64ffda", mr: 2, display: "flex", flexShrink: 0 }}><SchoolIcon /></Box>

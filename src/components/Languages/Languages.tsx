@@ -27,7 +27,7 @@ const Languages = () => {
         <Grid container spacing={3}>
           {entries.map((lang, index) => (
             <Grid key={lang.name} size={{ xs: 12, sm: 4 }}>
-              <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.15 * index }}>
+              <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.15 * index }} style={{ height: "100%" }}>
                 <Paper elevation={0} sx={{ p: 3, height: "100%", background: "rgba(17, 34, 64, 0.8)", border: "1px solid rgba(100, 255, 218, 0.1)", transition: "all 0.3s ease", "&:hover": { border: "1px solid rgba(100, 255, 218, 0.3)", transform: "translateY(-4px)" } }}>
                   <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                     <TranslateIcon sx={{ color: "#64ffda", mr: 1.5, fontSize: 20 }} />
