@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "awards": "Awards",
+    "contact": "Contact",
+    "source": "Source"
+  },
+  "home": {
+    "greeting": "Hi, my name is",
+    "name": "Isuru Edirisinghe.",
+    "rolePrefix": "I build things as a ",
+    "roles": [
+      "Full Stack Engineer",
+      "Cloud & DevOps Engineer",
+      "React & .NET Specialist",
+      "GenAI Platform Builder"
+    ],
+    "description": "Full Stack Software Engineer based in Lyon, France. I specialize in building scalable web applications, GenAI platforms, and cloud-native solutions with React, .NET, Python, and AWS/Azure.",
+    "cta": "Get In Touch",
+    "viewWork": "View My Work"
+  },
+  "about": {
+    "title": "About Me",
+    "p1": "I'm a Full Stack Software Engineer based in Lyon, France, with a track record of delivering high-impact solutions across healthcare, automotive, utilities, and supply chain industries. I build everything from GenAI platforms orchestrating multiple LLMs to real-time vehicle diagnostics systems.",
+    "p2_prefix": "Currently at ",
+    "p2_company": "ARCHIMED",
+    "p2_suffix": ", I architected MEDASSIST — a unified GenAI platform orchestrating Mistral, GPT-4, and Claude with dynamic model switching. I also built MEDSOURCE, a lead sourcing engine that cut operational costs by 80%, saving the company EUR 100k annually.",
+    "p3_prefix": "Previously at ",
+    "p3_company": "Peugeot Motocycles",
+    "p3_suffix": ", I led the development and release of the Peugeot Motocycles Connect app on Google Play and the App Store, and built a diagnostic dashboard that reduced troubleshooting time by 70%.",
+    "p4_prefix": "At ",
+    "p4_company": "99x Technology",
+    "p4_suffix": ", I spearheaded the Vannmalerbytte app used by 300+ Norwegian municipalities, cutting water meter installation time by 15% and saving over EUR 1M annually.",
+    "p5": "I hold an MSc. in IoT (with Honors) from the University of Bourgogne Franche-Comte and a BSc. in Computer Science from Uva Wellassa University."
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "categories": {
+      "languages": "Languages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "cloud": "Cloud & DevOps",
+      "databases": "Databases & Messaging",
+      "tools": "Tools & Practices"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present",
+    "entries": [
+      {
+        "date": "Jan 2025 - Present",
+        "title": "Software Engineer",
+        "company": "ARCHIMED SAS",
+        "location": "Lyon, France",
+        "highlights": [
+          "Architected MEDASSIST, a unified GenAI platform orchestrating multiple LLMs (Mistral, GPT-4, Claude) with dynamic model switching, internet context enrichment, and advanced file processing",
+          "Engineered the MEDSOURCE lead sourcing engine, cutting operational costs by 80% and saving EUR 100k annually by eliminating external vendor dependencies",
+          "Enhanced the MEDFINANCE ecosystem with AI-driven invoice data extraction and automated notification workflows for billing cycles"
+        ]
+      },
+      {
+        "date": "Nov 2022 - Aug 2024",
+        "title": "IT Development Engineer",
+        "company": "Peugeot Motocycles",
+        "location": "Mandeure, France",
+        "highlights": [
+          "Led the end-to-end development and release of the Peugeot Motocycles Connect app on Google Play and the Apple App Store, coordinating with global partners across China, India, and Italy",
+          "Built a real-time vehicle diagnostic dashboard, reducing troubleshooting time by 70%"
+        ]
+      },
+      {
+        "date": "Jun 2022 - Aug 2022",
+        "title": "Senior Full Stack Software Engineer",
+        "company": "99x Technology",
+        "location": "Colombo, Sri Lanka",
+        "highlights": [
+          "Developed the Vannmalerbytte app, used by 300+ Norwegian municipalities, reducing water meter installation time by 15% and saving EUR 1M annually",
+          "Increased team velocity by 20% as Scrum Master and optimized deployment processes with Azure ARM, reducing time by 30%"
+        ]
+      },
+      {
+        "date": "Mar 2020 - Jun 2022",
+        "title": "Full Stack Software Engineer",
+        "company": "99x Technology",
+        "location": "Colombo, Sri Lanka",
+        "highlights": [
+          "Built scalable REST API services for Rorleggerdialog backend, improving data processing speed by 40%",
+          "Integrated Microsoft Graph API for user authentication, boosting engagement by 35% via social login",
+          "Delivered a PWA frontend, increasing mobile engagement by 25%"
+        ]
+      },
+      {
+        "date": "Aug 2019 - Feb 2020",
+        "title": "Trainee Full Stack Software Engineer",
+        "company": "Tracified",
+        "location": "Colombo, Sri Lanka",
+        "highlights": [
+          "Developed backend and frontend components for the Tracified blockchain platform, reducing product tracking errors by 30%",
+          "Automated infrastructure deployment, cutting deployment times by 40%"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "entries": [
+      {
+        "degree": "MSc. Internet of Things",
+        "distinction": "Mention Bien / With Honors",
+        "institution": "University of Bourgogne Franche-Comte",
+        "location": "Besancon, France",
+        "period": "2022 - July 2024",
+        "highlights": [
+          "Specialized in IoT systems, embedded programming, and cloud computing",
+          "Master's thesis on connected vehicle diagnostics at Peugeot Motocycles"
+        ]
+      },
+      {
+        "degree": "BSc. (Hons) Computer Science & Technology",
+        "distinction": "",
+        "institution": "Uva Wellassa University",
+        "location": "Badulla, Sri Lanka",
+        "period": "2016 - February 2020",
+        "highlights": [
+          "Focused on software engineering, algorithms, and data structures",
+          "Final year project on blockchain-based supply chain traceability (Tracified)"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "entries": [
+      {
+        "title": "MEDASSIST - GenAI Platform",
+        "description": "Unified GenAI platform orchestrating multiple LLMs (Mistral, GPT-4, Claude) with dynamic model switching, internet context enrichment, and advanced file processing capabilities."
+      },
+      {
+        "title": "MEDSOURCE - Lead Sourcing Engine",
+        "description": "Automated lead sourcing engine that eliminated external vendor dependencies, cutting operational costs by 80% and saving EUR 100k annually for the company."
+      },
+      {
+        "title": "Peugeot Motocycles Connect",
+        "description": "Next-generation mobile connectivity app for Peugeot two-wheelers, available on Google Play and the Apple App Store. Real-time vehicle telemetry, diagnostics, and ride tracking."
+      },
+      {
+        "title": "Vannmalerbytte",
+        "description": "Water meter management platform used by 300+ municipalities in Norway. Reduced installation time by 15%, saving over EUR 1M annually."
+      },
+      {
+        "title": "Rorleggerdialog",
+        "description": "Progressive Web Application for plumber coordination in Norway. Built scalable REST APIs improving data processing speed by 40% and integrated Microsoft Graph API authentication."
+      },
+      {
+        "title": "Portfolio Website",
+        "description": "This personal portfolio built with React 19, Vite, MUI v7, and Framer Motion. Fully responsive dark-themed design with smooth animations."
+      }
+    ]
+  },
+  "awards": {
+    "title": "Awards",
+    "entries": [
+      {
+        "title": "Change Maker Award",
+        "issuer": "99x Technology Excellence Awards",
+        "year": "2020",
+        "description": "Recognized for driving innovation and delivering impactful results across multiple projects."
+      },
+      {
+        "title": "Merit Award",
+        "issuer": "National Best Quality Software Awards (NBQSA) Sri Lanka",
+        "year": "2018",
+        "description": "Awarded for outstanding software quality in the national competition."
+      }
+    ]
+  },
+  "languages": {
+    "title": "Languages",
+    "entries": [
+      {
+        "name": "English",
+        "level": "Full Professional Proficiency",
+        "detail": "CEFR C1, IELTS 7.5"
+      },
+      {
+        "name": "French",
+        "level": "Elementary Proficiency",
+        "detail": "Targeting A2"
+      },
+      {
+        "name": "Sinhala",
+        "level": "Native Speaker",
+        "detail": ""
+      }
+    ]
+  },
+  "contact": {
+    "number": "08. What's Next?",
+    "title": "Get In Touch",
+    "description": "Have a question, a project in mind, or just want to say hi? My inbox is always open. I'll do my best to get back to you!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you soon.",
+    "error": "Failed to send message. Please try again later."
+  },
+  "footer": {
+    "builtBy": "Designed & Built by Isuru Edirisinghe"
+  }
+}

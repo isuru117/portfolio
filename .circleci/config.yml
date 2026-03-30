@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:18.10.0
+      - image: cimg/node:22.12.0
     steps:
       - checkout
       - setup_remote_docker:
@@ -21,7 +21,7 @@ jobs:
 
   deploy:
     docker:
-      - image: docker:19.03.12
+      - image: docker:24
     steps:
       - attach_workspace:
           at: /workspace
@@ -33,7 +33,7 @@ jobs:
           command: ssh -oStrictHostKeyChecking=no $USER@$DNS "docker load -i /home/ubuntu/portfolio-app.tar"
       - run:
           name: Run Docker Container on Remote
-          command: ssh -oStrictHostKeyChecking=no $USER@$DNS "docker run -d -p 80:3000 portfolio-app"
+          command: ssh -oStrictHostKeyChecking=no $USER@$DNS "docker stop portfolio-app || true && docker rm portfolio-app || true && docker run -d --name portfolio-app -p 80:80 portfolio-app"
 
 workflows:
   build-deploy:

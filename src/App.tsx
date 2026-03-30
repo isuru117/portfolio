@@ -1,50 +1,59 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { useInView } from 'react-intersection-observer';
-import NavBar from './components/NavBar/NavBar';
-import Home from './components/Home/Home';
-import Experience from './components/Experience/Experience';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
-import './App.css';
-import Footer from './components/Footer/Footer';
+import { useEffect } from "react";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./theme";
+import NavBar from "./components/NavBar/NavBar";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Skills from "./components/Skills/Skills";
+import Experience from "./components/Experience/Experience";
+import Education from "./components/Education/Education";
+import Projects from "./components/Projects/Projects";
+import Awards from "./components/Awards/Awards";
+import Languages from "./components/Languages/Languages";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+import "./App.css";
 
-const App: React.FC = () => {
-
+const App = () => {
   useEffect(() => {
-    window.history.scrollRestoration = 'manual';
+    window.history.scrollRestoration = "manual";
   }, []);
 
-  const Section: React.FC<any> = ({ id, children }) => {
-    const { ref, inView } = useInView({
-      triggerOnce: false,
-      threshold: 0.1,
-    });
-
-    return (
-      <div id={id} ref={ref} className={`app-section section ${inView ? 'fade-in' : ''}`}>
-        {children}
-      </div>
-    );
-  };
-
   return (
-    <Router>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <NavBar />
-      <Section id="home">
-        <Home />
-      </Section>
-      <Section id="about">
-        <About />
-      </Section>
-      <Section id="experience">
-        <Experience />
-      </Section>
-      <Section id="contact">
-        <Contact />
-      </Section>
+      <main>
+        <section id="home">
+          <Home />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+        <section id="experience">
+          <Experience />
+        </section>
+        <section id="education">
+          <Education />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="awards">
+          <Awards />
+        </section>
+        <section id="languages">
+          <Languages />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
       <Footer />
-    </Router>
+    </ThemeProvider>
   );
 };
 
