@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "about": "A propos",
+    "skills": "Competences",
+    "experience": "Experience",
+    "projects": "Projets",
+    "awards": "Prix",
+    "contact": "Contact",
+    "source": "Source"
+  },
+  "home": {
+    "greeting": "Bonjour, je m'appelle",
+    "name": "Isuru Edirisinghe.",
+    "rolePrefix": "Je construis en tant que ",
+    "roles": [
+      "Ingenieur Full Stack",
+      "Ingenieur Cloud & DevOps",
+      "Specialiste React & .NET",
+      "Developpeur de Plateformes GenAI"
+    ],
+    "description": "Ingenieur Full Stack base a Lyon, France. Je me specialise dans la creation d'applications web scalables, de plateformes GenAI et de solutions cloud-native avec React, .NET, Python et AWS/Azure.",
+    "cta": "Me Contacter",
+    "viewWork": "Voir Mon Travail"
+  },
+  "about": {
+    "title": "A Propos",
+    "p1": "Je suis un Ingenieur Logiciel Full Stack base a Lyon, France, avec un parcours de solutions a fort impact dans les secteurs de la sante, de l'automobile, des services publics et de la chaine d'approvisionnement. Je developpe aussi bien des plateformes GenAI orchestrant plusieurs LLMs que des systemes de diagnostic vehicule en temps reel.",
+    "p2_prefix": "Actuellement chez ",
+    "p2_company": "ARCHIMED",
+    "p2_suffix": ", j'ai concu MEDASSIST — une plateforme GenAI unifiee orchestrant Mistral, GPT-4 et Claude avec un changement de modele dynamique. J'ai egalement construit MEDSOURCE, un moteur de sourcing qui a reduit les couts operationnels de 80%, economisant 100k EUR par an.",
+    "p3_prefix": "Precedemment chez ",
+    "p3_company": "Peugeot Motocycles",
+    "p3_suffix": ", j'ai dirige le developpement et la mise en ligne de l'application Peugeot Motocycles Connect sur Google Play et l'App Store, et construit un tableau de bord diagnostique reduisant le temps de depannage de 70%.",
+    "p4_prefix": "Chez ",
+    "p4_company": "99x Technology",
+    "p4_suffix": ", j'ai pilote l'application Vannmalerbytte utilisee par plus de 300 municipalites norvegiennes, reduisant le temps d'installation des compteurs d'eau de 15% et economisant plus d'1M EUR par an.",
+    "p5": "Je suis titulaire d'un MSc. en IoT (mention Bien) de l'Universite de Bourgogne Franche-Comte et d'un BSc. en Informatique de l'Universite Uva Wellassa."
+  },
+  "skills": {
+    "title": "Competences & Technologies",
+    "categories": {
+      "languages": "Langages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "cloud": "Cloud & DevOps",
+      "databases": "Bases de Donnees & Messagerie",
+      "tools": "Outils & Pratiques"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present",
+    "entries": [
+      {
+        "date": "Jan 2025 - Present",
+        "title": "Ingenieur Logiciel",
+        "company": "ARCHIMED SAS",
+        "location": "Lyon, France",
+        "highlights": [
+          "Conception de MEDASSIST, une plateforme GenAI unifiee orchestrant plusieurs LLMs (Mistral, GPT-4, Claude) avec changement de modele dynamique, enrichissement contextuel internet et traitement avance de fichiers",
+          "Developpement du moteur de sourcing MEDSOURCE, reduisant les couts operationnels de 80% et economisant 100k EUR par an en eliminant les dependances aux fournisseurs externes",
+          "Amelioration de l'ecosysteme MEDFINANCE avec extraction de donnees de factures par IA et workflows de notification automatises pour les cycles de facturation"
+        ]
+      },
+      {
+        "date": "Nov 2022 - Aout 2024",
+        "title": "Ingenieur en Developpement IT",
+        "company": "Peugeot Motocycles",
+        "location": "Mandeure, France",
+        "highlights": [
+          "Direction du developpement et de la mise en production de l'application Peugeot Motocycles Connect sur Google Play et l'Apple App Store, en coordination avec des partenaires mondiaux en Chine, Inde et Italie",
+          "Creation d'un tableau de bord de diagnostic vehicule en temps reel, reduisant le temps de depannage de 70%"
+        ]
+      },
+      {
+        "date": "Juin 2022 - Aout 2022",
+        "title": "Ingenieur Logiciel Full Stack Senior",
+        "company": "99x Technology",
+        "location": "Colombo, Sri Lanka",
+        "highlights": [
+          "Developpement de l'application Vannmalerbytte, utilisee par plus de 300 municipalites norvegiennes, reduisant le temps d'installation des compteurs d'eau de 15% et economisant 1M EUR par an",
+          "Augmentation de la velocite de l'equipe de 20% en tant que Scrum Master et optimisation des processus de deploiement avec Azure ARM, reduisant le temps de 30%"
+        ]
+      },
+      {
+        "date": "Mars 2020 - Juin 2022",
+        "title": "Ingenieur Logiciel Full Stack",
+        "company": "99x Technology",
+        "location": "Colombo, Sri Lanka",
+        "highlights": [
+          "Construction de services API REST scalables pour le backend de Rorleggerdialog, ameliorant la vitesse de traitement des donnees de 40%",
+          "Integration de Microsoft Graph API pour l'authentification des utilisateurs, augmentant l'engagement de 35% via la connexion sociale",
+          "Livraison d'un frontend PWA, augmentant l'engagement mobile de 25%"
+        ]
+      },
+      {
+        "date": "Aout 2019 - Fev 2020",
+        "title": "Ingenieur Logiciel Full Stack Stagiaire",
+        "company": "Tracified",
+        "location": "Colombo, Sri Lanka",
+        "highlights": [
+          "Developpement de composants backend et frontend pour la plateforme blockchain Tracified, reduisant les erreurs de suivi des produits de 30%",
+          "Automatisation du deploiement de l'infrastructure, reduisant les temps de deploiement de 40%"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Formation",
+    "entries": [
+      {
+        "degree": "MSc. Internet des Objets",
+        "distinction": "Mention Bien",
+        "institution": "Universite de Bourgogne Franche-Comte",
+        "location": "Besancon, France",
+        "period": "2022 - Juillet 2024",
+        "highlights": [
+          "Specialisation en systemes IoT, programmation embarquee et cloud computing",
+          "Memoire de master sur le diagnostic de vehicules connectes chez Peugeot Motocycles"
+        ]
+      },
+      {
+        "degree": "BSc. (Hons) Informatique & Technologie",
+        "distinction": "",
+        "institution": "Universite Uva Wellassa",
+        "location": "Badulla, Sri Lanka",
+        "period": "2016 - Fevrier 2020",
+        "highlights": [
+          "Specialisation en genie logiciel, algorithmes et structures de donnees",
+          "Projet de fin d'etudes sur la tracabilite de la chaine d'approvisionnement par blockchain (Tracified)"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projets",
+    "entries": [
+      {
+        "title": "MEDASSIST - Plateforme GenAI",
+        "description": "Plateforme GenAI unifiee orchestrant plusieurs LLMs (Mistral, GPT-4, Claude) avec changement de modele dynamique, enrichissement contextuel internet et traitement avance de fichiers."
+      },
+      {
+        "title": "MEDSOURCE - Moteur de Sourcing",
+        "description": "Moteur de sourcing automatise eliminant les dependances aux fournisseurs externes, reduisant les couts operationnels de 80% et economisant 100k EUR par an."
+      },
+      {
+        "title": "Peugeot Motocycles Connect",
+        "description": "Application de connectivite mobile de nouvelle generation pour les deux-roues Peugeot, disponible sur Google Play et l'Apple App Store. Telemetrie vehicule en temps reel, diagnostics et suivi de trajet."
+      },
+      {
+        "title": "Vannmalerbytte",
+        "description": "Plateforme de gestion des compteurs d'eau utilisee par plus de 300 municipalites en Norvege. Reduction du temps d'installation de 15%, economisant plus d'1M EUR par an."
+      },
+      {
+        "title": "Rorleggerdialog",
+        "description": "Application Web Progressive pour la coordination des plombiers en Norvege. Construction d'APIs REST scalables ameliorant la vitesse de traitement de 40% et integration de l'authentification Microsoft Graph API."
+      },
+      {
+        "title": "Site Portfolio",
+        "description": "Ce portfolio personnel construit avec React 19, Vite, MUI v7 et Framer Motion. Design sombre entierement responsive avec des animations fluides."
+      }
+    ]
+  },
+  "awards": {
+    "title": "Prix",
+    "entries": [
+      {
+        "title": "Prix Change Maker",
+        "issuer": "99x Technology Excellence Awards",
+        "year": "2020",
+        "description": "Reconnu pour avoir stimule l'innovation et livre des resultats impactants sur plusieurs projets."
+      },
+      {
+        "title": "Prix du Merite",
+        "issuer": "National Best Quality Software Awards (NBQSA) Sri Lanka",
+        "year": "2018",
+        "description": "Recompense pour la qualite logicielle exceptionnelle dans la competition nationale."
+      }
+    ]
+  },
+  "languages": {
+    "title": "Langues",
+    "entries": [
+      {
+        "name": "English",
+        "level": "Competence professionnelle complete",
+        "detail": "CECR C1, IELTS 7.5"
+      },
+      {
+        "name": "Francais",
+        "level": "Competence elementaire",
+        "detail": "Niveau A2"
+      },
+      {
+        "name": "Sinhala",
+        "level": "Langue maternelle",
+        "detail": ""
+      }
+    ]
+  },
+  "contact": {
+    "number": "08. Et Ensuite ?",
+    "title": "Me Contacter",
+    "description": "Vous avez une question, un projet en tete, ou simplement envie de dire bonjour ? Ma boite de reception est toujours ouverte. Je ferai de mon mieux pour vous repondre !",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer le Message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoye ! Je vous repondrai bientot.",
+    "error": "Echec de l'envoi du message. Veuillez reessayer plus tard."
+  },
+  "footer": {
+    "builtBy": "Concu & Developpe par Isuru Edirisinghe"
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "about": "මා ගැන",
+    "skills": "කුසලතා",
+    "experience": "අත්දැකීම්",
+    "projects": "ව්‍යාපෘති",
+    "awards": "සම්මාන",
+    "contact": "සම්බන්ධ වන්න",
+    "source": "මූලාශ්‍රය"
+  },
+  "home": {
+    "greeting": "ආයුබෝවන්, මගේ නම",
+    "name": "ඉසුරු එදිරිසිංහ.",
+    "rolePrefix": "මම නිර්මාණය කරමි - ",
+    "roles": [
+      "ජ්‍යෙෂ්ඨ Full Stack ඉංජිනේරු",
+      "Cloud & DevOps ඉංජිනේරු",
+      "React & .NET විශේෂඥ",
+      "GenAI වේදිකා නිර්මාතා"
+    ],
+    "description": "ප්‍රංශයේ ලියෝන් නගරයේ පදිංචි ජ්‍යෙෂ්ඨ Full Stack මෘදුකාංග ඉංජිනේරු. React, .NET, Python සහ AWS/Azure සමඟ scalable වෙබ් යෙදුම්, GenAI වේදිකා සහ cloud-native විසඳුම් නිර්මාණය කිරීමේ විශේෂඥතාව.",
+    "cta": "සම්බන්ධ වන්න",
+    "viewWork": "මගේ කාර්යයන් බලන්න"
+  },
+  "about": {
+    "title": "මා ගැන",
+    "p1": "මම ප්‍රංශයේ ලියෝන් නගරයේ පදිංචි ජ්‍යෙෂ්ඨ Full Stack මෘදුකාංග ඉංජිනේරුවෙක්. සෞඛ්‍ය සේවා, මෝටර් රථ, උපයෝගිතා සහ සැපයුම් දාම කර්මාන්තවල ඉහළ බලපෑම් සහිත විසඳුම් ලබා දීමේ වාර්තාවක් ඇත. බහු LLM සම්බන්ධීකරණය කරන GenAI වේදිකා සිට තත්‍ය කාලීන වාහන රෝග විනිශ්චය පද්ධති දක්වා සියල්ල මම නිර්මාණය කරමි.",
+    "p2_prefix": "දැනට ",
+    "p2_company": "ARCHIMED",
+    "p2_suffix": " හි, මම MEDASSIST නිර්මාණය කළෙමි — Mistral, GPT-4 සහ Claude ගතික ආකෘති මාරුවීම් සමඟ සම්බන්ධීකරණය කරන ඒකාබද්ධ GenAI වේදිකාවකි. මම MEDSOURCE ද ගොඩනැගුවෙමි, මෙහෙයුම් පිරිවැය 80%කින් අඩු කර වාර්ෂිකව EUR 100k ඉතිරි කරන lead sourcing එන්ජිමකි.",
+    "p3_prefix": "මීට පෙර ",
+    "p3_company": "Peugeot Motocycles",
+    "p3_suffix": " හි, Google Play සහ App Store මත Peugeot Motocycles Connect යෙදුම සංවර්ධනය කර නිකුත් කිරීම මම මෙහෙයවූ අතර, දෝශ නිරාකරණ කාලය 70%කින් අඩු කරන රෝග විනිශ්චය dashboard එකක් ගොඩනැගුවෙමි.",
+    "p4_prefix": "",
+    "p4_company": "99x Technology",
+    "p4_suffix": " හි, නෝර්වීජියානු නාගරික සභා 300+ක භාවිතා කරන Vannmalerbytte යෙදුම මම මෙහෙයවූ අතර, ජල මීටර් ස්ථාපන කාලය 15%කින් අඩු කර වාර්ෂිකව EUR 1M ට වඩා ඉතිරි කළෙමි.",
+    "p5": "මම Bourgogne Franche-Comté විශ්ව විද්‍යාලයෙන් IoT MSc. (සම්මාන සහිත) සහ Uva Wellassa විශ්ව විද්‍යාලයෙන් පරිගණක විද්‍යාව BSc. උපාධි ලබා ඇත."
+  },
+  "skills": {
+    "title": "කුසලතා & තාක්ෂණයන්",
+    "categories": {
+      "languages": "භාෂා",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "cloud": "Cloud & DevOps",
+      "databases": "දත්ත සමුදාය & පණිවිඩ",
+      "tools": "මෙවලම් & පරිචයන්"
+    }
+  },
+  "experience": {
+    "title": "අත්දැකීම්",
+    "present": "වර්තමානය",
+    "entries": [
+      {
+        "date": "2025 ජන - වර්තමානය",
+        "title": "මෘදුකාංග ඉංජිනේරු",
+        "company": "ARCHIMED SAS",
+        "location": "ලියෝන්, ප්‍රංශය",
+        "highlights": [
+          "බහු LLMs (Mistral, GPT-4, Claude) ගතික ආකෘති මාරුවීම්, අන්තර්ජාල සන්දර්භ පොහොසත් කිරීම සහ උසස් ගොනු සැකසුම් සමඟ සම්බන්ධීකරණය කරන ඒකාබද්ධ GenAI වේදිකාවක් වන MEDASSIST නිර්මාණය කිරීම",
+          "බාහිර වෙළෙන්දා යැපීම් ඉවත් කරමින් මෙහෙයුම් පිරිවැය 80%කින් අඩු කර වාර්ෂිකව EUR 100k ඉතිරි කරන MEDSOURCE lead sourcing එන්ජිම ඉංජිනේරු කිරීම",
+          "AI-මත ඉන්වොයිස් දත්ත නිස්සාරණය සහ බිල්පත් චක්‍ර සඳහා ස්වයංක්‍රීය දැනුම්දීම් කාර්ය ප්‍රවාහ සමඟ MEDFINANCE පරිසර පද්ධතිය වැඩිදියුණු කිරීම"
+        ]
+      },
+      {
+        "date": "2022 නොවැ - 2024 අගෝ",
+        "title": "IT සංවර්ධන ඉංජිනේරු",
+        "company": "Peugeot Motocycles",
+        "location": "මැන්ඩූර්, ප්‍රංශය",
+        "highlights": [
+          "චීනය, ඉන්දියාව සහ ඉතාලිය හරහා ගෝලීය හවුල්කරුවන් සමඟ සම්බන්ධීකරණය කරමින් Google Play සහ Apple App Store මත Peugeot Motocycles Connect යෙදුම සංවර්ධනය හා නිකුත් කිරීම මෙහෙයවීම",
+          "දෝශ නිරාකරණ කාලය 70%කින් අඩු කරන තත්‍ය කාලීන වාහන රෝග විනිශ්චය dashboard එකක් ගොඩනැගීම"
+        ]
+      },
+      {
+        "date": "2022 ජූනි - 2022 අගෝ",
+        "title": "ජ්‍යෙෂ්ඨ Full Stack මෘදුකාංග ඉංජිනේරු",
+        "company": "99x Technology",
+        "location": "කොළඹ, ශ්‍රී ලංකාව",
+        "highlights": [
+          "නෝර්වීජියානු නාගරික සභා 300+ක භාවිතා කරන Vannmalerbytte යෙදුම සංවර්ධනය කිරීම, ජල මීටර් ස්ථාපන කාලය 15%කින් අඩු කිරීම සහ වාර්ෂිකව EUR 1M ඉතිරි කිරීම",
+          "Scrum Master ලෙස කණ්ඩායම් වේගය 20%කින් වැඩි කිරීම සහ Azure ARM සමඟ ක්‍රියාත්මක කිරීමේ ක්‍රියාවලි ප්‍රශස්තකරණය, කාලය 30%කින් අඩු කිරීම"
+        ]
+      },
+      {
+        "date": "2020 මාර්තු - 2022 ජූනි",
+        "title": "Full Stack මෘදුකාංග ඉංජිනේරු",
+        "company": "99x Technology",
+        "location": "කොළඹ, ශ්‍රී ලංකාව",
+        "highlights": [
+          "Rorleggerdialog backend සඳහා scalable REST API සේවා ගොඩනැගීම, දත්ත සැකසුම් වේගය 40%කින් වැඩි දියුණු කිරීම",
+          "සමාජ login හරහා engagement 35%කින් වැඩි කරමින් පරිශීලක සත්‍යාපනය සඳහා Microsoft Graph API ඒකාබද්ධ කිරීම",
+          "ජංගම engagement 25%කින් වැඩි කරමින් PWA frontend එකක් ලබා දීම"
+        ]
+      },
+      {
+        "date": "2019 අගෝ - 2020 පෙබ",
+        "title": "පුහුණු Full Stack මෘදුකාංග ඉංජිනේරු",
+        "company": "Tracified",
+        "location": "කොළඹ, ශ්‍රී ලංකාව",
+        "highlights": [
+          "Tracified blockchain වේදිකාව සඳහා backend සහ frontend සංරචක සංවර්ධනය, නිෂ්පාදන ලුහුබැඳීම් දෝෂ 30%කින් අඩු කිරීම",
+          "යටිතල පහසුකම් ක්‍රියාත්මක කිරීම ස්වයංක්‍රීය කිරීම, ක්‍රියාත්මක කිරීමේ කාලය 40%කින් අඩු කිරීම"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "අධ්‍යාපනය",
+    "entries": [
+      {
+        "degree": "MSc. Internet of Things",
+        "distinction": "Mention Bien / සම්මාන සහිත",
+        "institution": "Bourgogne Franche-Comté විශ්ව විද්‍යාලය",
+        "location": "බෙසැන්සොන්, ප්‍රංශය",
+        "period": "2022 - 2024 ජූලි",
+        "highlights": [
+          "IoT පද්ධති, embedded programming සහ cloud computing විශේෂීකරණය",
+          "Peugeot Motocycles හි සම්බන්ධිත වාහන රෝග විනිශ්චය පිළිබඳ ශාස්ත්‍රපති නිබන්ධනය"
+        ]
+      },
+      {
+        "degree": "BSc. (සම්මාන) පරිගණක විද්‍යාව & තාක්ෂණය",
+        "distinction": "",
+        "institution": "ඌව වෙල්ලස්ස විශ්ව විද්‍යාලය",
+        "location": "බදුල්ල, ශ්‍රී ලංකාව",
+        "period": "2016 - 2020 පෙබරවාරි",
+        "highlights": [
+          "මෘදුකාංග ඉංජිනේරු විද්‍යාව, ඇල්ගොරිතම සහ දත්ත ව්‍යුහ කෙරෙහි අවධානය",
+          "Blockchain පදනම් සැපයුම් දාම ලුහුබැඳීම පිළිබඳ අවසන් වසර ව්‍යාපෘතිය (Tracified)"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "ව්‍යාපෘති",
+    "entries": [
+      {
+        "title": "MEDASSIST - GenAI වේදිකාව",
+        "description": "බහු LLMs (Mistral, GPT-4, Claude) ගතික ආකෘති මාරුවීම්, අන්තර්ජාල සන්දර්භ පොහොසත් කිරීම සහ උසස් ගොනු සැකසුම් හැකියාවන් සමඟ සම්බන්ධීකරණය කරන ඒකාබද්ධ GenAI වේදිකාව."
+      },
+      {
+        "title": "MEDSOURCE - Lead Sourcing එන්ජිම",
+        "description": "බාහිර වෙළෙන්දා යැපීම් ඉවත් කරමින් මෙහෙයුම් පිරිවැය 80%කින් අඩු කර සමාගමට වාර්ෂිකව EUR 100k ඉතිරි කරන ස්වයංක්‍රීය lead sourcing එන්ජිම."
+      },
+      {
+        "title": "Peugeot Motocycles Connect",
+        "description": "Peugeot ද්විරෝද වාහන සඳහා නවතම පරම්පරාවේ ජංගම සම්බන්ධතා යෙදුම, Google Play සහ Apple App Store මත ලබා ගත හැක. තත්‍ය කාලීන වාහන ටෙලිමෙට්‍රි, රෝග විනිශ්චය සහ ගමන් ලුහුබැඳීම."
+      },
+      {
+        "title": "Vannmalerbytte",
+        "description": "නෝර්වේයේ නාගරික සභා 300+ක භාවිතා කරන ජල මීටර් කළමනාකරණ වේදිකාව. ස්ථාපන කාලය 15%කින් අඩු කිරීම, වාර්ෂිකව EUR 1M ට වැඩි ඉතිරි කිරීම."
+      },
+      {
+        "title": "Rorleggerdialog",
+        "description": "නෝර්වේයේ කුළුදුල් සම්බන්ධීකරණය සඳහා Progressive Web Application. දත්ත සැකසුම් වේගය 40%කින් වැඩි දියුණු කරන scalable REST APIs ගොඩනැගීම සහ Microsoft Graph API සත්‍යාපනය ඒකාබද්ධ කිරීම."
+      },
+      {
+        "title": "Portfolio වෙබ් අඩවිය",
+        "description": "React 19, Vite, MUI v7 සහ Framer Motion සමඟ ගොඩනැගූ මෙම පුද්ගලික portfolio. සුමට animations සහිත සම්පූර්ණයෙන්ම responsive dark-theme design."
+      }
+    ]
+  },
+  "awards": {
+    "title": "සම්මාන",
+    "entries": [
+      {
+        "title": "Change Maker සම්මානය",
+        "issuer": "99x Technology Excellence Awards",
+        "year": "2020",
+        "description": "බහු ව්‍යාපෘති හරහා නවෝත්පාදනය මෙහෙයවීම සහ බලපෑම් සහිත ප්‍රතිඵල ලබා දීම සඳහා පිළිගැනීම."
+      },
+      {
+        "title": "කුසලතා සම්මානය",
+        "issuer": "National Best Quality Software Awards (NBQSA) Sri Lanka",
+        "year": "2018",
+        "description": "ජාතික තරඟාවලියේ විශිෂ්ට මෘදුකාංග ගුණාත්මකභාවය සඳහා ත්‍යාගය."
+      }
+    ]
+  },
+  "languages": {
+    "title": "භාෂා",
+    "entries": [
+      {
+        "name": "English",
+        "level": "සම්පූර්ණ වෘත්තීය ප්‍රවීණතාව",
+        "detail": "CEFR C1, IELTS 7.5"
+      },
+      {
+        "name": "Francais",
+        "level": "මූලික ප්‍රවීණතාව",
+        "detail": "A2 මට්ටම"
+      },
+      {
+        "name": "සිංහල",
+        "level": "මව් භාෂාව",
+        "detail": ""
+      }
+    ]
+  },
+  "contact": {
+    "number": "08. ඊළඟට කුමක්ද?",
+    "title": "සම්බන්ධ වන්න",
+    "description": "ඔබට ප්‍රශ්නයක්, ව්‍යාපෘතියක් ගැන සිතුවිල්ලක්, හෝ හුදෙක් ආයුබෝවන් කියන්න අවශ්‍යද? මගේ inbox එක සැමවිටම විවෘතයි. ඔබට ඉක්මනින්ම පිළිතුරු දීමට මම උපරිම උත්සාහය දරමි!",
+    "name": "නම",
+    "email": "ඊමේල්",
+    "message": "පණිවිඩය",
+    "send": "පණිවිඩය යවන්න",
+    "sending": "යවමින්...",
+    "success": "පණිවිඩය යවන ලදී! මම ඉක්මනින් ඔබ වෙත එන්නම්.",
+    "error": "පණිවිඩය යැවීම අසාර්ථකයි. කරුණාකර පසුව නැවත උත්සාහ කරන්න."
+  },
+  "footer": {
+    "builtBy": "ඉසුරු එදිරිසිංහ විසින් නිර්මාණය & සංවර්ධනය"
+  }
+}

@@ -1,200 +1,142 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Container, List, ListItem, ListItemIcon, Typography, useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Link as ScrollLink, scroller } from 'react-scroll';
-import myImage from '../../assets/images/isuru.png';
-import backgroundImage from '../../assets/images/bridge.jpg';
-import { LinkedIn, GitHub, Twitter, Mail } from '@mui/icons-material';
+import { useState, useEffect } from "react";
+import { Box, Container, Typography, Button, IconButton, Stack } from "@mui/material";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { LinkedIn, GitHub, Email, Language } from "@mui/icons-material";
+import { scroller } from "react-scroll";
 
-const Home: React.FC = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const [showArrow, setShowArrow] = useState(true);
+const Home = () => {
+  const { t } = useTranslation();
+  const roles = t("home.roles", { returnObjects: true }) as string[];
 
-    const socials = [
-        { name: 'LinkedIn', icon: <LinkedIn />, link: 'https://www.linkedin.com/in/isuru117' },
-        { name: 'GitHub', icon: <GitHub />, link: 'https://github.com/isuru117/' },
-        { name: 'Twitter', icon: <Twitter />, link: 'https://twitter.com/isuru117' },
-        { name: 'Mail', icon: <Mail />, link: 'mailto:isuruedirisinghe80@gmail.com' },
-    ];
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [showArrow, setShowArrow] = useState(true);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > window.innerHeight / 2) {
-                setShowArrow(false);
-            } else {
-                setShowArrow(true);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const scrollToSection = (sectionId: string) => {
-        scroller.scrollTo(sectionId, {
-            duration: 800,
-            delay: 0,
-            smooth: 'easeInOutQuart',
-            offset: -50
-        });
-    };
-
-    return (
-        <Box
-            sx={{
-                position: 'relative',
-                minHeight: '100vh',
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-            }}
-        >
-            <Box
-                sx={{
-                    position: 'absolute',
-                    top: 0,
-                    right: 0,
-                    bottom: 0,
-                    left: 0,
-                    backgroundColor: 'rgba(0, 0, 0, 0.8)'
-                }}
-            />
-            <Container
-                sx={{
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: isMobile ? 'column' : 'row',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minHeight: '100vh',
-                    color: 'white',
-                    padding: 2
-                }}
-            >
-                <Box
-                    sx={{
-                        flex: 1,
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        order: isMobile ? 0 : 1,
-                        padding: 1
-                    }}
-                >
-                    <Box
-                        component="img"
-                        src={myImage}
-                        alt="Home"
-                        sx={{
-                            width: { xs: '35vh', md: '40vh' },
-                            height: { xs: '35vh', md: '40vh' },
-                            borderRadius: '50%',
-                            objectFit: 'cover',
-                            border: '5px solid transparent',
-                            backgroundColor: 'rgba(253,250,114, 0.8)',
-                        }}
-                    />
-                </Box>
-                <Box
-                    sx={{
-                        flex: 1,
-                        padding: 1,
-                        order: isMobile ? 1 : 0,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'flex-start'
-                    }}
-                >
-                    <Typography variant="h6" component="h6" sx={{ textAlign: 'left', marginBottom: 2 }}>
-                        Hey there! My name is Isuru Edirisinghe
-                    </Typography>
-                    <Typography variant="h4" component="h4" sx={{ textAlign: 'justify', textAlignLast: 'left' }}>
-                        I’m a Full Stack Software Engineer, specialized in development of web applications using React, .NET, Node.js & more
-                    </Typography>
-                    <List sx={{ display: 'flex', justifyContent: 'flex-start', gap: 2, marginTop: 2 }}>
-                        {socials.map((social, index) => (
-                            <ListItem
-                                key={index}
-                                component="a"
-                                href={social.link}
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: { xs: '60px', md: '80px' },
-                                    height: { xs: '60px', md: '80px' },
-                                    borderRadius: '8px',
-                                    transition: 'background-color 0.3s, transform 0.3s',
-                                    textDecoration: 'none',
-                                    color: 'inherit',
-                                    '&:hover': {
-                                        transform: 'scale(1.2)',
-                                        backgroundColor: 'white',
-                                        '& .MuiListItemIcon-root': {
-                                            color: 'black',
-                                        },
-                                    },
-                                }}
-                            >
-                                <ListItemIcon
-                                    sx={{
-                                        color: 'white',
-                                        minWidth: 'auto',
-                                        fontSize: { xs: '40px', md: '50px' },
-                                    }}
-                                >
-                                    {React.cloneElement(social.icon, {
-                                        style: { fontSize: 'inherit' },
-                                    })}
-                                </ListItemIcon>
-                            </ListItem>
-                        ))}
-                    </List>
-                </Box>
-            </Container>
-            {showArrow && !isMobile && (
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        bottom: 16,
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        cursor: 'pointer',
-                        textAlign: 'center',
-                    }}
-                >
-                    <ScrollLink onClick={() => scrollToSection('about')} to="about">
-                        <Typography
-                            sx={{
-                                color: 'white',
-                                marginBottom: 1
-                            }}
-                        >
-                            More About Me
-                        </Typography>
-
-                        <KeyboardArrowDownIcon
-                            sx={{
-                                fontSize: 48,
-                                color: 'white',
-                                animation: 'blink 1.5s infinite',
-                            }}
-                        />
-                    </ScrollLink>
-                </Box>
-            )}
-            <style>
-                {`
-                    @keyframes blink {
-                        0%, 100% { opacity: 1; }
-                        50% { opacity: 0; }
-                    }
-                `}
-            </style>
-        </Box>
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          setDisplayText(currentRole.slice(0, displayText.length + 1));
+          if (displayText.length === currentRole.length) {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
+        } else {
+          setDisplayText(currentRole.slice(0, displayText.length - 1));
+          if (displayText.length === 0) {
+            setIsDeleting(false);
+            setRoleIndex((prev) => (prev + 1) % roles.length);
+          }
+        }
+      },
+      isDeleting ? 40 : 80
     );
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, roleIndex, roles]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowArrow(window.scrollY <= window.innerHeight / 3);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    scroller.scrollTo(sectionId, {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -80,
+    });
+  };
+
+  const socials = [
+    { icon: <LinkedIn />, link: "https://www.linkedin.com/in/isuru117", label: "LinkedIn" },
+    { icon: <GitHub />, link: "https://github.com/isuru117/", label: "GitHub" },
+    { icon: <Email />, link: "mailto:isuruedirisinghe80@gmail.com", label: "Email" },
+    { icon: <Language />, link: "https://isuruedirisinghe.com", label: "Website" },
+  ];
+
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        background: "linear-gradient(135deg, #0a192f 0%, #112240 50%, #0a192f 100%)",
+        overflow: "hidden",
+      }}
+    >
+      <Box sx={{ position: "absolute", top: "10%", right: "-5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(100,255,218,0.03) 0%, transparent 70%)", filter: "blur(40px)" }} />
+      <Box sx={{ position: "absolute", bottom: "10%", left: "-10%", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(72,198,239,0.04) 0%, transparent 70%)", filter: "blur(40px)" }} />
+
+      <Container maxWidth="md" sx={{ position: "relative", zIndex: 1 }}>
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+          <Typography sx={{ color: "#64ffda", fontFamily: "'JetBrains Mono', monospace", fontSize: { xs: "0.9rem", md: "1rem" }, mb: 2 }}>
+            {t("home.greeting")}
+          </Typography>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
+          <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" }, fontWeight: 800, color: "#ccd6f6", lineHeight: 1.1, mb: 1 }}>
+            {t("home.name")}
+          </Typography>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
+          <Typography variant="h2" sx={{ fontSize: { xs: "1.5rem", sm: "2rem", md: "2.8rem" }, fontWeight: 600, mb: 3, minHeight: { xs: "2.5rem", md: "3.5rem" } }}>
+            <Box component="span" sx={{ color: "#8892b0" }}>
+              {t("home.rolePrefix")}
+            </Box>
+            <Box component="span" sx={{ background: "linear-gradient(135deg, #64ffda, #48c6ef)", backgroundClip: "text", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              {displayText}
+            </Box>
+            <Box component="span" sx={{ borderRight: "3px solid #64ffda", ml: 0.5, animation: "cursor-blink 1s step-end infinite" }} />
+          </Typography>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.8 }}>
+          <Typography variant="body1" sx={{ maxWidth: "560px", fontSize: { xs: "0.95rem", md: "1.05rem" }, mb: 4, lineHeight: 1.8 }}>
+            {t("home.description")}
+          </Typography>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.0 }}>
+          <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 4 }}>
+            <Button variant="outlined" size="large" onClick={() => scrollToSection("contact")} sx={{ borderColor: "#64ffda", color: "#64ffda", px: 4, py: 1.5, fontSize: "0.9rem", "&:hover": { background: "rgba(100, 255, 218, 0.1)", borderColor: "#64ffda" } }}>
+              {t("home.cta")}
+            </Button>
+            <Button variant="outlined" size="large" onClick={() => scrollToSection("experience")} sx={{ borderColor: "#8892b0", color: "#8892b0", px: 4, py: 1.5, fontSize: "0.9rem", "&:hover": { background: "rgba(136, 146, 176, 0.1)", borderColor: "#ccd6f6", color: "#ccd6f6" } }}>
+              {t("home.viewWork")}
+            </Button>
+          </Stack>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.2 }}>
+          <Stack direction="row" spacing={1}>
+            {socials.map((social) => (
+              <IconButton key={social.label} component="a" href={social.link} target="_blank" rel="noopener noreferrer" aria-label={social.label} sx={{ color: "#8892b0", "&:hover": { color: "#64ffda", transform: "translateY(-3px)" }, transition: "all 0.2s ease" }}>
+                {social.icon}
+              </IconButton>
+            ))}
+          </Stack>
+        </motion.div>
+      </Container>
+
+      {showArrow && (
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} style={{ position: "absolute", bottom: 40, left: "50%", transform: "translateX(-50%)" }}>
+          <Box onClick={() => scrollToSection("about")} sx={{ cursor: "pointer", textAlign: "center", animation: "float 2s ease-in-out infinite" }}>
+            <KeyboardArrowDownIcon sx={{ fontSize: 32, color: "#64ffda" }} />
+          </Box>
+        </motion.div>
+      )}
+    </Box>
+  );
 };
 
 export default Home;
