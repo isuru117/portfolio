@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { Box, Container, Typography, Button, IconButton, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -7,35 +7,66 @@ import { LinkedIn, GitHub, Email, Language } from "@mui/icons-material";
 import { scroller } from "react-scroll";
 
 const Home = () => {
-  const { t } = useTranslation();
-  const roles = t("home.roles", { returnObjects: true }) as string[];
+  const { t, i18n } = useTranslation();
+  const roles = useMemo(
+    () => t("home.roles", { returnObjects: true }) as string[],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [i18n.language]
+  );
 
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [showArrow, setShowArrow] = useState(true);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+  const clearTypingTimeout = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  }, []);
+
+  // Reset typing on language change
+  useEffect(() => {
+    clearTypingTimeout();
+    setRoleIndex(0);
+    setDisplayText("");
+    setIsDeleting(false);
+    setIsPaused(false);
+  }, [roles, clearTypingTimeout]);
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
-    const timeout = setTimeout(
-      () => {
-        if (!isDeleting) {
-          setDisplayText(currentRole.slice(0, displayText.length + 1));
-          if (displayText.length === currentRole.length) {
-            setTimeout(() => setIsDeleting(true), 2000);
-          }
-        } else {
-          setDisplayText(currentRole.slice(0, displayText.length - 1));
-          if (displayText.length === 0) {
-            setIsDeleting(false);
-            setRoleIndex((prev) => (prev + 1) % roles.length);
-          }
+    if (!currentRole) return;
+
+    if (isPaused) {
+      timeoutRef.current = setTimeout(() => {
+        setIsPaused(false);
+        setIsDeleting(true);
+      }, 2000);
+      return () => clearTypingTimeout();
+    }
+
+    const delay = isDeleting ? 40 : 80;
+
+    timeoutRef.current = setTimeout(() => {
+      if (!isDeleting) {
+        const next = currentRole.slice(0, displayText.length + 1);
+        setDisplayText(next);
+        if (next.length === currentRole.length) {
+          setIsPaused(true);
         }
-      },
-      isDeleting ? 40 : 80
-    );
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, roleIndex, roles]);
+      } else {
+        const next = currentRole.slice(0, displayText.length - 1);
+        setDisplayText(next);
+        if (next.length === 0) {
+          setIsDeleting(false);
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, delay);
+
+    return () => clearTypingTimeout();
+  }, [displayText, isDeleting, isPaused, roleIndex, roles, clearTypingTimeout]);
 
   useEffect(() => {
     const handleScroll = () => {

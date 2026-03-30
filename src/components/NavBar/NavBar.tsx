@@ -20,6 +20,7 @@ import { useTranslation } from "react-i18next";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import TranslateIcon from "@mui/icons-material/Translate";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const navKeys = ["about", "skills", "experience", "projects", "awards", "contact"] as const;
 
@@ -185,20 +186,25 @@ const NavBar = () => {
               href="https://github.com/isuru117/portfolio/"
               target="_blank"
               rel="noopener noreferrer"
+              startIcon={<GitHubIcon sx={{ fontSize: "1rem" }} />}
               sx={{
-                borderColor: "#64ffda",
-                color: "#64ffda",
+                borderColor: "rgba(100, 255, 218, 0.4)",
+                color: "#ccd6f6",
                 ml: 1,
                 px: 2,
-                fontSize: "0.8rem",
+                py: 0.7,
+                fontSize: "0.78rem",
                 textTransform: "none",
+                fontFamily: "'JetBrains Mono', monospace",
+                gap: 0.5,
                 "&:hover": {
                   background: "rgba(100, 255, 218, 0.1)",
                   borderColor: "#64ffda",
+                  color: "#64ffda",
                 },
               }}
             >
-              {t("nav.source")}
+              Fork
             </Button>
           </Box>
         </Toolbar>
